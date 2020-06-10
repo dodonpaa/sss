@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.thymeleaf.org http://www.thymeleaf.org
+  http://www.ultraq.net.nz/thymeleaf/layout http://www.ultraq.net.nz/thymeleaf/layout
+  http://www.thymeleaf.org/thymeleaf-extras-springsecurity4 http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+    
+  <link rel="shortcut icon" href="img/streetpoints-logo-90x90.png" type="image/x-icon"> 
+<!-- 
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+-->
+    <title>Streetpoints Shop</title>   
+    
+     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic" rel="stylesheet">
+    
+     <style amp-custom> 
+div,span,h1,h2,h3,h4,h5,h6,p,blockquote,a,ol,ul,li,figcaption{font:inherit}*{box-sizing:border-box}body{position:relative;font-style:normal;line-height:1.5}section{background-color:#eeeeee;background-position:50% 50%;background-repeat:no-repeat;background-size:cover}section,.container,.container-fluid{position:relative;word-wrap:break-word}a.mbr-iconfont:hover{text-decoration:none}h1,h2,h3{margin:auto}h1,h3,p{padding:10px 0;margin-bottom:15px}p,li,blockquote{color:#15181b;letter-spacing:0.5px;line-height:1.7}ul,ol,pre,blockquote{margin-bottom:0;margin-top:0}pre{background:#f4f4f4;padding:10px 24px;white-space:pre-wrap}p{margin-top:0}a{font-style:normal;font-weight:400;cursor:pointer}a,a:hover{text-decoration:none}figure{margin-bottom:0}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.display-1,.display-2,.display-3,.display-4{line-height:1;word-break:break-word;word-wrap:break-word}b,strong{font-weight:bold}blockquote{padding:10px 0 10px 20px;position:relative;border-left:3px solid}input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active{transition-delay:9999s;transition-property:background-color,color}html,body{height:auto;min-height:100vh}.mbr-section-title{font-style:normal;line-height:1.2}.mbr-section-subtitle{line-height:1.3}.mbr-text{font-style:normal;line-height:1.6}.btn{font-weight:400;border-width:2px;border-style:solid;font-style:normal;letter-spacing:2px;margin:.4rem .5rem;white-space:normal;transition:all .3s ease-in-out,box-shadow 2s ease-in-out;display:inline-flex;align-items:center;justify-content:center;word-break:break-word;-webkit-align-items:center;-webkit-justify-content:center;display:-webkit-inline-flex}.btn-form{border-radius:0}.btn-form:hover{cursor:pointer}input,textarea{padding:15px 0.5rem;margin:0.5rem}.mbr-figure img,.mbr-figure iframe{display:block;width:100%}.card{background-color:transparent;border:none}.card-wrapper{-webkit-box-flex:1;-webkit-flex:1}.card-img{text-align:center;flex-shrink:0;-webkit-flex-shrink:0}.media{max-width:100%;margin:0 auto}.mbr-figure{-ms-grid-row-align:center;align-self:center}.media-container>div{max-width:100%}.mbr-figure img,.card-img img{width:100%}@media (max-width: 991px){.media-size-item{width:auto}.media{width:auto}.mbr-figure{width:100%}}section.slider .amp-carousel-button{cursor:pointer}amp-image-lightbox a.control{position:absolute;width:32px;height:32px;right:16px;top:16px;z-index:1000}amp-image-lightbox a.control .close{position:relative}amp-image-lightbox a.control .close:before,amp-image-lightbox a.control .close:after{position:absolute;left:15px;content:' ';height:33px;width:2px;background-color:#fff}amp-image-lightbox a.control .close:before{-webkit-transform:rotate(45deg);transform:rotate(45deg)}amp-image-lightbox a.control .close:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.hidden{visibility:hidden}.super-hide{display:none}.inactive{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;-webkit-user-drag:none;user-drag:none}textarea[type="hidden"]{display:none}#scrollToTop{display:none}.popover-content ul.show{min-height:155px}.mbr-white{color:#ffffff}.mbr-black{color:#000000}.mbr-bg-white{background-color:#ffffff}.mbr-bg-black{background-color:#000000}.align-left{text-align:left}.align-center{text-align:center}.align-right{text-align:right}@media (max-width: 767px){.align-left,.align-center,.align-right,.mbr-section-btn,.mbr-section-title{text-align:center}}.mbr-light{font-weight:300}.mbr-regular{font-weight:400}.mbr-semibold{font-weight:500}.mbr-bold{font-weight:700}.mbr-section-btn{margin-left:-.25rem;margin-right:-.25rem;font-size:0}nav .mbr-section-btn{margin-left:0rem;margin-right:0rem}.btn .mbr-iconfont,.btn.btn-sm .mbr-iconfont{cursor:pointer;margin-right:0.5rem}.btn.btn-md .mbr-iconfont,.btn.btn-md .mbr-iconfont{margin-right:0.8rem}[type="submit"]{-webkit-appearance:none}.google-map{height:400px;position:relative;width:100%}.google-map iframe{height:100%;width:100%}.google-map [data-state-details]{color:#6b6763;font-family:Montserrat;height:1.5em;margin-top:-0.75em;padding-left:1.25rem;padding-right:1.25rem;position:absolute;text-align:center;top:50%;width:100%}.google-map[data-state]{background:#e9e5dc}.google-map[data-state="loading"] [data-state-details]{display:none}.map-placeholder{display:none}.mbr-fullscreen .mbr-overlay{height:100vh}.mbr-fullscreen{display:flex;display:-moz-flex;display:-ms-flex;display:-o-flex;align-items:center;-webkit-align-items:center;height:100vh;box-sizing:border-box;padding-top:3rem;padding-bottom:3rem}.mbr-overlay{bottom:0;left:0;position:absolute;right:0;top:0;z-index:0}section.sidebar-open:before{content:'';position:fixed;top:0;bottom:0;right:0;left:0;background-color:rgba(0,0,0,0.2);z-index:1040}amp-img img{max-height:100%;max-width:100%}img.mbr-temp{width:100%}.is-builder .nodisplay+img[async],.is-builder .nodisplay+img[decoding="async"],.is-builder amp-img>a+img[async],.is-builder amp-img>a+img[decoding="async"]{display:none}html:not(.is-builder) amp-img>a{position:absolute;top:0;bottom:0;left:0;right:0;z-index:1}.is-builder .temp-amp-sizer{position:absolute}.is-builder section.slider .icon-wrap,.is-builder section[class*="gallery"] .icon-wrap{pointer-events:all}.is-builder amp-youtube .temp-amp-sizer,.is-builder amp-vimeo .temp-amp-sizer{position:static}.is-builder section.horizontal-menu .ampstart-btn{display:none}@media (max-width: 991px){.is-builder section.horizontal-menu .navbar-toggler{display:block}}.is-builder section.horizontal-menu .dropdown-menu{z-index:auto;opacity:1;pointer-events:auto}.is-builder section.horizontal-menu .nav-dropdown .link.dropdown-toggle[aria-expanded="true"]{margin-right:0;padding:0.667em 1em}.mobirise-spinner{position:absolute;top:50%;left:40%;margin-left:10%;-webkit-transform:translate3d(-50%,-50%,0);z-index:4}.mobirise-spinner em{width:24px;height:24px;border-radius:100%;display:inline-block;-webkit-animation:slide 1s infinite}.mobirise-spinner em:nth-child(1){-webkit-animation-delay:0.1s}.mobirise-spinner em:nth-child(2){-webkit-animation-delay:0.2s}.mobirise-spinner em:nth-child(3){-webkit-animation-delay:0.3s}@-webkit-keyframes slide{0%{-webkit-transform:scale(1)}50%{opacity:0.3;-webkit-transform:scale(2)}100%{-webkit-transform:scale(1)}}@keyframes slide{0%{-webkit-transform:scale(1)}50%{opacity:0.3;-webkit-transform:scale(2)}100%{-webkit-transform:scale(1)}}.mobirise-loader .amp-active>div{display:none}.mbr-container{max-width:800px;padding:0 10px;margin:0 auto;position:relative}.container{padding-right:15px;padding-left:15px;width:100%;margin-right:auto;margin-left:auto}@media (max-width: 767px){.container{max-width:540px}}@media (min-width: 768px){.container{max-width:720px}}@media (min-width: 992px){.container{max-width:960px}}@media (min-width: 1200px){.container{max-width:1140px}}.mbr-row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.mbr-justify-content-center{justify-content:center;-webkit-justify-content:center}@media (max-width: 767px){.mbr-col-sm-12{flex:0 0 100%;max-width:100%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 100%}.mbr-row{margin:0}}@media (min-width: 768px){.mbr-col-md-3{flex:0 0 25%;max-width:25%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 25%}.mbr-col-md-4{flex:0 0 33.333333%;max-width:33.333333%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 33.333333%}.mbr-col-md-5{flex:0 0 41.666667%;max-width:41.666667%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 41.666667%}.mbr-col-md-6{flex:0 0 50%;max-width:50%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 50%}.mbr-col-md-7{flex:0 0 58.333333%;max-width:58.333333%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 58.333333%}.mbr-col-md-8{flex:0 0 66.666667%;max-width:66.666667%;padding-left:15px;padding-right:15px;-webkit-flex:0 0 66.666667%}.mbr-col-md-10{flex:0 0 83.333333%;max-width:83.333333%;padding-left:15px;padding-right:15px;-webkit-flex:0 0 83.333333%}.mbr-col-md-12{flex:0 0 100%;max-width:100%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 100%}}@media (min-width: 992px){.mbr-col-lg-2{flex:0 0 16.666667%;max-width:16.666667%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 16.666667%}.mbr-col-lg-3{flex:0 0 25%;max-width:25%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 25%}.mbr-col-lg-4{flex:0 0 33.33%;max-width:33.33%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 33.33%}.mbr-col-lg-5{flex:0 0 41.666%;max-width:41.666%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 41.666%}.mbr-col-lg-6{flex:0 0 50%;max-width:50%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 50%}.mbr-col-lg-8{flex:0 0 66.666667%;max-width:66.666667%;padding-left:15px;padding-right:15px;-webkit-flex:0 0 66.666667%}.mbr-col-lg-10{flex:0 0 83.3333%;max-width:83.3333%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 83.3333%}.mbr-col-lg-12{flex:0 0 100%;max-width:100%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 100%}}@media (min-width: 1200px){.mbr-col-xl-7{flex:0 0 58.333333%;max-width:58.333333%;padding-right:15px;padding-left:15px;-webkit-flex:0 0 58.333333%}.mbr-col-xl-8{flex:0 0 66.666667%;max-width:66.666667%;padding-left:15px;padding-right:15px;-webkit-flex:0 0 66.666667%}}amp-sidebar{background:transparent}#scrollToTopMarker{position:absolute;width:0px;height:0px;top:300px}#scrollToTopButton{position:fixed;bottom:25px;right:25px;opacity:.4;z-index:5000;font-size:32px;height:60px;width:60px;border:none;border-radius:3px;cursor:pointer}#scrollToTopButton:focus{outline:none}#scrollToTopButton a:before{content:'';position:absolute;height:40%;top:36%;width:2px;left:calc(50% - 1px)}#scrollToTopButton a:after{content:'';position:absolute;border-top:2px solid;border-right:2px solid;width:40%;height:40%;left:calc(30% - 1px);bottom:30%;transform:rotate(-45deg);-webkit-transform:rotate(-45deg)}.is-builder #scrollToTopButton a:after{left:30%}.form-check{margin-bottom:0}.form-check-label{padding-left:0}.form-check-input{position:relative;margin:4px}.form-check-inline{display:inline-flex;align-items:center;padding-left:0;margin-right:.75rem}
+body{font-family: Roboto;}blockquote{border-color: #4ea2e3;}.display-1{font-family: 'Roboto',sans-serif;font-size: 4.5rem;}.display-2{font-family: 'Roboto',sans-serif;font-size: 2.2rem;}.display-4{font-family: 'Roboto',sans-serif;font-size: 0.9rem;}.display-5{font-family: 'Roboto',sans-serif;font-size: 1.8rem;}.display-7{font-family: 'Roboto',sans-serif;font-size: 1.1rem;}input,textarea{font-family: 'Roboto',sans-serif;font-size: 0.9rem;}.display-1 .mbr-iconfont-btn{font-size: 4.5rem;width: 4.5rem;}.display-2 .mbr-iconfont-btn{font-size: 2.2rem;width: 2.2rem;}.display-4 .mbr-iconfont-btn{font-size: 0.9rem;width: 0.9rem;}.display-5 .mbr-iconfont-btn{font-size: 1.8rem;width: 1.8rem;}.display-7 .mbr-iconfont-btn{font-size: 1.1rem;width: 1.1rem;}@media (max-width: 768px){.display-1{font-size: 3.6rem;font-size: calc( 2.225rem + (4.5 - 2.225) * ((100vw - 20rem) / (48 - 20)));line-height: calc( 1.4 * (2.225rem + (4.5 - 2.225) * ((100vw - 20rem) / (48 - 20))));}.display-2{font-size: 1.76rem;font-size: calc( 1.42rem + (2.2 - 1.42) * ((100vw - 20rem) / (48 - 20)));line-height: calc( 1.4 * (1.42rem + (2.2 - 1.42) * ((100vw - 20rem) / (48 - 20))));}.display-4{font-size: 0.72rem;font-size: calc( 0.965rem + (0.9 - 0.965) * ((100vw - 20rem) / (48 - 20)));line-height: calc( 1.4 * (0.965rem + (0.9 - 0.965) * ((100vw - 20rem) / (48 - 20))));}.display-5{font-size: 1.44rem;font-size: calc( 1.28rem + (1.8 - 1.28) * ((100vw - 20rem) / (48 - 20)));line-height: calc( 1.4 * (1.28rem + (1.8 - 1.28) * ((100vw - 20rem) / (48 - 20))));}}.btn{padding: 1rem 2rem;border-radius: 0px;}.btn-sm{border-width: 1px;padding: 0.6rem 0.8rem;border-radius: 0px;}.btn-md{font-weight: 600;padding: 1rem 2rem;border-radius: 0px;}.bg-primary{background-color: #4ea2e3;}.bg-success{background-color: #0dcd7b;}.bg-info{background-color: #8282e7;}.bg-warning{background-color: #767676;}.bg-danger{background-color: #a0a0a0;}.btn-primary,.btn-primary:active,.btn-primary.active{background-color: #4ea2e3;border-color: #4ea2e3;color: #ffffff;}.btn-primary:hover,.btn-primary:focus,.btn-primary.focus{color: #ffffff;background-color: #1f7dc5;border-color: #1f7dc5;}.btn-primary.disabled,.btn-primary:disabled{color: #ffffff;background-color: #1f7dc5;border-color: #1f7dc5;}.btn-secondary,.btn-secondary:active,.btn-secondary.active{background-color: #4addff;border-color: #4addff;color: #003c4a;}.btn-secondary:hover,.btn-secondary:focus,.btn-secondary.focus{color: #003c4a;background-color: #00cdfd;border-color: #00cdfd;}.btn-secondary.disabled,.btn-secondary:disabled{color: #003c4a;background-color: #00cdfd;border-color: #00cdfd;}.btn-info,.btn-info:active,.btn-info.active{background-color: #8282e7;border-color: #8282e7;color: #ffffff;}.btn-info:hover,.btn-info:focus,.btn-info.focus{color: #ffffff;background-color: #4242db;border-color: #4242db;}.btn-info.disabled,.btn-info:disabled{color: #ffffff;background-color: #4242db;border-color: #4242db;}.btn-success,.btn-success:active,.btn-success.active{background-color: #0dcd7b;border-color: #0dcd7b;color: #ffffff;}.btn-success:hover,.btn-success:focus,.btn-success.focus{color: #ffffff;background-color: #088550;border-color: #088550;}.btn-success.disabled,.btn-success:disabled{color: #ffffff;background-color: #088550;border-color: #088550;}.btn-warning,.btn-warning:active,.btn-warning.active{background-color: #767676;border-color: #767676;color: #ffffff;}.btn-warning:hover,.btn-warning:focus,.btn-warning.focus{color: #ffffff;background-color: #505050;border-color: #505050;}.btn-warning.disabled,.btn-warning:disabled{color: #ffffff;background-color: #505050;border-color: #505050;}.btn-danger,.btn-danger:active,.btn-danger.active{background-color: #a0a0a0;border-color: #a0a0a0;color: #ffffff;}.btn-danger:hover,.btn-danger:focus,.btn-danger.focus{color: #ffffff;background-color: #7a7a7a;border-color: #7a7a7a;}.btn-danger.disabled,.btn-danger:disabled{color: #ffffff;background-color: #7a7a7a;border-color: #7a7a7a;}.btn-black,.btn-black:active,.btn-black.active{background-color: #333333;border-color: #333333;color: #ffffff;}.btn-black:hover,.btn-black:focus,.btn-black.focus{color: #ffffff;background-color: #0d0d0d;border-color: #0d0d0d;}.btn-black.disabled,.btn-black:disabled{color: #ffffff;background-color: #0d0d0d;border-color: #0d0d0d;}.btn-white,.btn-white:active,.btn-white.active{background-color: #ffffff;border-color: #ffffff;color: #808080;}.btn-white:hover,.btn-white:focus,.btn-white.focus{color: #808080;background-color: #d9d9d9;border-color: #d9d9d9;}.btn-white.disabled,.btn-white:disabled{color: #808080;background-color: #d9d9d9;border-color: #d9d9d9;}.btn-white,.btn-white:active,.btn-white.active{color: #333333;}.btn-white:hover,.btn-white:focus,.btn-white.focus{color: #333333;}.btn-white.disabled,.btn-white:disabled{color: #333333;}.btn-primary-outline,.btn-primary-outline:active,.btn-primary-outline.active{background: none;border-color: #1c6faf;color: #1c6faf;}.btn-primary-outline:hover,.btn-primary-outline:focus,.btn-primary-outline.focus{color: #ffffff;background-color: #4ea2e3;border-color: #4ea2e3;}.btn-primary-outline.disabled,.btn-primary-outline:disabled{color: #ffffff;background-color: #4ea2e3;border-color: #4ea2e3;}.btn-secondary-outline,.btn-secondary-outline:active,.btn-secondary-outline.active{background: none;border-color: #00b8e3;color: #00b8e3;}.btn-secondary-outline:hover,.btn-secondary-outline:focus,.btn-secondary-outline.focus{color: #003c4a;background-color: #4addff;border-color: #4addff;}.btn-secondary-outline.disabled,.btn-secondary-outline:disabled{color: #003c4a;background-color: #4addff;border-color: #4addff;}.btn-info-outline,.btn-info-outline:active,.btn-info-outline.active{background: none;border-color: #2c2cd7;color: #2c2cd7;}.btn-info-outline:hover,.btn-info-outline:focus,.btn-info-outline.focus{color: #ffffff;background-color: #8282e7;border-color: #8282e7;}.btn-info-outline.disabled,.btn-info-outline:disabled{color: #ffffff;background-color: #8282e7;border-color: #8282e7;}.btn-success-outline,.btn-success-outline:active,.btn-success-outline.active{background: none;border-color: #076d41;color: #076d41;}.btn-success-outline:hover,.btn-success-outline:focus,.btn-success-outline.focus{color: #ffffff;background-color: #0dcd7b;border-color: #0dcd7b;}.btn-success-outline.disabled,.btn-success-outline:disabled{color: #ffffff;background-color: #0dcd7b;border-color: #0dcd7b;}.btn-warning-outline,.btn-warning-outline:active,.btn-warning-outline.active{background: none;border-color: #434343;color: #434343;}.btn-warning-outline:hover,.btn-warning-outline:focus,.btn-warning-outline.focus{color: #ffffff;background-color: #767676;border-color: #767676;}.btn-warning-outline.disabled,.btn-warning-outline:disabled{color: #ffffff;background-color: #767676;border-color: #767676;}.btn-danger-outline,.btn-danger-outline:active,.btn-danger-outline.active{background: none;border-color: #6d6d6d;color: #6d6d6d;}.btn-danger-outline:hover,.btn-danger-outline:focus,.btn-danger-outline.focus{color: #ffffff;background-color: #a0a0a0;border-color: #a0a0a0;}.btn-danger-outline.disabled,.btn-danger-outline:disabled{color: #ffffff;background-color: #a0a0a0;border-color: #a0a0a0;}.btn-black-outline,.btn-black-outline:active,.btn-black-outline.active{background: none;border-color: #000000;color: #000000;}.btn-black-outline:hover,.btn-black-outline:focus,.btn-black-outline.focus{color: #ffffff;background-color: #333333;border-color: #333333;}.btn-black-outline.disabled,.btn-black-outline:disabled{color: #ffffff;background-color: #333333;border-color: #333333;}.btn-white-outline,.btn-white-outline:active,.btn-white-outline.active{background: none;border-color: #ffffff;color: #ffffff;}.btn-white-outline:hover,.btn-white-outline:focus,.btn-white-outline.focus{color: #333333;background-color: #ffffff;border-color: #ffffff;}.text-primary{color: #4ea2e3;}.text-secondary{color: #4addff;}.text-success{color: #0dcd7b;}.text-info{color: #8282e7;}.text-warning{color: #767676;}.text-danger{color: #a0a0a0;}.text-white{color: #ffffff;}.text-black{color: #000000;}a.text-primary:hover,a.text-primary:focus{color: #1c6faf;}a.text-secondary:hover,a.text-secondary:focus{color: #00b8e3;}a.text-success:hover,a.text-success:focus{color: #076d41;}a.text-info:hover,a.text-info:focus{color: #2c2cd7;}a.text-warning:hover,a.text-warning:focus{color: #434343;}a.text-danger:hover,a.text-danger:focus{color: #6d6d6d;}a.text-white:hover,a.text-white:focus{color: #b3b3b3;}a.text-black:hover,a.text-black:focus{color: #4d4d4d;}.alert-success{background-color: #0dcd7b;}.alert-info{background-color: #8282e7;}.alert-warning{background-color: #767676;}.alert-danger{background-color: #a0a0a0;}a,a:hover{color: #4ea2e3;}.mbr-plan-header.bg-primary .mbr-plan-subtitle,.mbr-plan-header.bg-primary .mbr-plan-price-desc{color: #feffff;}.mbr-plan-header.bg-success .mbr-plan-subtitle,.mbr-plan-header.bg-success .mbr-plan-price-desc{color: #acfad9;}.mbr-plan-header.bg-info .mbr-plan-subtitle,.mbr-plan-header.bg-info .mbr-plan-price-desc{color: #ffffff;}.mbr-plan-header.bg-warning .mbr-plan-subtitle,.mbr-plan-header.bg-warning .mbr-plan-price-desc{color: #b6b6b6;}.mbr-plan-header.bg-danger .mbr-plan-subtitle,.mbr-plan-header.bg-danger .mbr-plan-price-desc{color: #e0e0e0;}.mobirise-spinner em:nth-child(1){background: #4ea2e3;}.mobirise-spinner em:nth-child(2){background: #4addff;}.mobirise-spinner em:nth-child(3){background: #0dcd7b;}#scrollToTopMarker{display: none;}#scrollToTopButton{background-color: #4ea2e3;}#scrollToTopButton a:before{background: #ffffff;}#scrollToTopButton a:after{border-top-color: #ffffff;border-right-color: #ffffff;}.cid-rY0INlp3st{min-height: 80px;}.cid-rY0INlp3st .brand-name{color: #494949;margin: 0;}.cid-rY0INlp3st .nav-item:focus,.cid-rY0INlp3st .nav-link:focus{outline: none;}.cid-rY0INlp3st .navbar-nav{list-style-type: none;display: flex;-webkit-flex-direction: row;flex-direction: row;padding-left: 0;}.cid-rY0INlp3st .navbar-nav .nav-link{margin: .667em 1em;font-weight: normal;}@media (min-width: 992px){.cid-rY0INlp3st .dropdown-menu .dropdown-toggle:after{content: '';border-bottom: 0.35em solid transparent;border-left: 0.35em solid;border-right: 0;border-top: 0.35em solid transparent;margin-left: 0.3rem;margin-top: -0.3077em;position: absolute;right: 1.1538em;top: 50%;}}@media (max-width: 991px){.cid-rY0INlp3st ul.navbar-nav{-webkit-flex-direction: column;flex-direction: column;}.cid-rY0INlp3st ul.navbar-nav li{margin: auto;}.cid-rY0INlp3st .dropdown-toggle[data-toggle="dropdown-submenu"]:after{content: '';margin-left: .25rem;border-top: 0.35em solid;border-right: 0.35em solid transparent;border-left: 0.35em solid transparent;border-bottom: 0;top: 55%;}.cid-rY0INlp3st .nav-dropdown .dropdown-menu .dropdown-item{-webkit-justify-content: center;justify-content: center;display: flex;-webkit-align-items: center;align-items: center;}}.cid-rY0INlp3st .nav-dropdown .dropdown-menu{border-radius: 0;border: 0;left: 0;margin: 0;min-width: 10rem;padding-bottom: 1.25rem;padding-top: 1.25rem;position: absolute;}.cid-rY0INlp3st .nav-dropdown .dropdown-menu .dropdown-item{font-weight: 400;line-height: 2;display: flex;-webkit-align-items: center;align-items: center;width: 100%;padding: .25rem 1.5rem;clear: both;text-align: inherit;white-space: nowrap;background: 0 0;border: 0;}.cid-rY0INlp3st .nav-dropdown .dropdown-menu .dropdown{position: relative;}.cid-rY0INlp3st .nav-item.dropdown{position: relative;}.cid-rY0INlp3st .nav-item.dropdown .dropdown-menu{z-index: -1;opacity: 0;pointer-events: none;}.cid-rY0INlp3st .nav-item.dropdown:hover > .dropdown-menu{z-index: 1;opacity: 1;pointer-events: all;}.cid-rY0INlp3st .dropdown-menu .dropdown:hover > .dropdown-menu{z-index: 1;opacity: 1;pointer-events: all;}.cid-rY0INlp3st .link.dropdown-toggle:after{content: '';margin-left: .25rem;border-top: 0.35em solid;border-right: 0.35em solid transparent;border-left: 0.35em solid transparent;border-bottom: 0;}.cid-rY0INlp3st .nav-dropdown .dropdown-submenu{top: 0;}.cid-rY0INlp3st .navbar{z-index: 100;display: flex;-webkit-flex-direction: row;flex-direction: row;width: 100%;min-height: 80px;transition: all .3s;background: #ffffff;}.cid-rY0INlp3st .navbar .navbar-logo{margin-right: .8rem;}.cid-rY0INlp3st .navbar .navbar-logo img{height: auto;}.cid-rY0INlp3st .navbar.navbar-short{background: #ffffff;}.cid-rY0INlp3st .navbar.navbar-short .brand{padding: 0;}.cid-rY0INlp3st .navbar.opened{transition: all .3s;background: #ffffff;}.cid-rY0INlp3st .navbar .dropdown-item{padding: .25rem 1.5rem;}.cid-rY0INlp3st .navbar .navbar-collapse{display: flex;-webkit-justify-content: flex-end;justify-content: flex-end;z-index: 1;-webkit-flex-basis: 100%;flex-basis: 100%;-webkit-align-items: center;align-items: center;}@media (max-width: 991px){.cid-rY0INlp3st .navbar .navbar-collapse{display: none;position: absolute;top: 0;right: 0;min-height: 100vh;background: #ffffff;padding: 1rem 2rem 1rem 2rem;}.cid-rY0INlp3st .navbar.opened .navbar-collapse.show,.cid-rY0INlp3st .navbar.opened .navbar-collapse.collapsing{display: block;}.cid-rY0INlp3st .navbar.opened .dropdown-menu{top: 0;}.cid-rY0INlp3st .navbar .dropdown-menu{position: relative;background: transparent;}.cid-rY0INlp3st .navbar .dropdown-menu .dropdown-submenu{left: 0;}.cid-rY0INlp3st .navbar .dropdown-menu .dropdown-item:after{right: auto;}.cid-rY0INlp3st .navbar .dropdown-menu .dropdown-item{padding: .25rem 1.5rem;text-align: center;margin: 0;}.cid-rY0INlp3st .navbar .brand{-webkit-flex-shrink: initial;flex-shrink: initial;word-break: break-word;}}.cid-rY0INlp3st .brand{display: flex;-webkit-flex-shrink: 0;flex-shrink: 0;-webkit-align-items: center;align-items: center;margin-right: 0;padding: 0;transition: all .3s;word-break: break-word;z-index: 1;}.cid-rY0INlp3st .brand .navbar-caption{line-height: inherit;font-weight: normal;}.cid-rY0INlp3st .brand .navbar-logo a{outline: none;}.cid-rY0INlp3st .brand .navbar-caption-wrap{display: flex;}.cid-rY0INlp3st .dropdown-item.active,.cid-rY0INlp3st .dropdown-item:active{background-color: transparent;}.cid-rY0INlp3st .navbar-expand-lg .navbar-nav .nav-link{padding: 0;}.cid-rY0INlp3st .navbar.navbar-expand-lg .dropdown .dropdown-menu{background: #ffffff;}.cid-rY0INlp3st .navbar.navbar-expand-lg .dropdown .dropdown-menu .dropdown-submenu{margin: 0;left: 100%;}.cid-rY0INlp3st .navbar .dropdown.open > .dropdown-menu{display: block;}.cid-rY0INlp3st ul.navbar-nav{-webkit-flex-wrap: wrap;flex-wrap: wrap;}.cid-rY0INlp3st .navbar-buttons{text-align: center;}.cid-rY0INlp3st button.navbar-toggler{display: none;outline: none;width: 31px;height: 20px;cursor: pointer;transition: all .2s;position: relative;-webkit-align-self: center;align-self: center;}.cid-rY0INlp3st button.navbar-toggler .hamburger span{position: absolute;right: 0;width: 30px;height: 2px;border-right: 5px;background-color: #4ea2e3;}.cid-rY0INlp3st button.navbar-toggler .hamburger span:nth-child(1){top: 0;transition: all .2s;}.cid-rY0INlp3st button.navbar-toggler .hamburger span:nth-child(2){top: 8px;transition: all .15s;}.cid-rY0INlp3st button.navbar-toggler .hamburger span:nth-child(3){top: 8px;transition: all .15s;}.cid-rY0INlp3st button.navbar-toggler .hamburger span:nth-child(4){top: 16px;transition: all .2s;}.cid-rY0INlp3st nav.opened .navbar-toggler:not(.hide) .hamburger span:nth-child(1){top: 8px;width: 0;opacity: 0;right: 50%;transition: all .2s;}.cid-rY0INlp3st nav.opened .navbar-toggler:not(.hide) .hamburger span:nth-child(2){-webkit-transform: rotate(45deg);transform: rotate(45deg);transition: all .25s;}.cid-rY0INlp3st nav.opened .navbar-toggler:not(.hide) .hamburger span:nth-child(3){-webkit-transform: rotate(-45deg);transform: rotate(-45deg);transition: all .25s;}.cid-rY0INlp3st nav.opened .navbar-toggler:not(.hide) .hamburger span:nth-child(4){top: 8px;width: 0;opacity: 0;right: 50%;transition: all .2s;}.cid-rY0INlp3st .navbar-dropdown{padding: .5rem 1rem;position: fixed;}.cid-rY0INlp3st a.nav-link{display: flex;-webkit-align-items: center;align-items: center;-webkit-justify-content: center;justify-content: center;}.cid-rY0INlp3st .nav-link .mbr-iconfont,.cid-rY0INlp3st .dropdown-item .mbr-iconfont{margin-right: .2rem;}.cid-rY0INlp3st .ampstart-btn{display: flex;-webkit-align-self: center;align-self: center;}@media (min-width: 992px){.cid-rY0INlp3st .ampstart-btn{display: none;}}.cid-rY0INlp3st .ampstart-btn.hamburger{position: relative;right: 20px;margin-left: auto;width: 30px;height: 20px;background: none;border: none;cursor: pointer;z-index: 1000;}.cid-rY0INlp3st .ampstart-btn.hamburger:focus{outline: none;}.cid-rY0INlp3st .ampstart-btn.hamburger span{position: absolute;right: 0;width: 30px;height: 2px;border-right: 5px;background-color: #4ea2e3;}.cid-rY0INlp3st .ampstart-btn.hamburger span:nth-child(1){top: 0;transition: all .2s;}.cid-rY0INlp3st .ampstart-btn.hamburger span:nth-child(2){top: 8px;transition: all .15s;}.cid-rY0INlp3st .ampstart-btn.hamburger span:nth-child(3){top: 8px;transition: all .15s;}.cid-rY0INlp3st .ampstart-btn.hamburger span:nth-child(4){top: 16px;transition: all .2s;}.cid-rY0INlp3st amp-sidebar{min-width: 260px;z-index: 1050;background-color: #ffffff;}.cid-rY0INlp3st amp-sidebar.open:after{content: '';position: absolute;top: 0;left: 0;bottom: 0;right: 0;background-color: red;}.cid-rY0INlp3st .open{transform: translateX(0%);display: block;-webkit-transform: translateX(0%);}.cid-rY0INlp3st .builder-sidebar{background-color: #ffffff;position: relative;min-height: 100vh;z-index: 1030;padding: 1rem 2rem;max-width: 20rem;}.cid-rY0INlp3st .builder-sidebar .dropdown{position: relative;}.cid-rY0INlp3st .builder-sidebar .dropdown:hover > .dropdown-menu{position: relative;text-align: center;}.cid-rY0INlp3st .sidebar{padding: 1rem 0;margin: 0;}.cid-rY0INlp3st .sidebar > li{list-style: none;display: flex;-webkit-flex-direction: column;flex-direction: column;}.cid-rY0INlp3st .sidebar a{display: block;text-decoration: none;margin-bottom: 10px;}.cid-rY0INlp3st .close-sidebar{width: 30px;height: 30px;position: relative;cursor: pointer;background-color: transparent;border: none;}.cid-rY0INlp3st .close-sidebar:focus{outline: 2px auto #4ea2e3;}.cid-rY0INlp3st .close-sidebar span{position: absolute;left: 0;top: 14px;width: 30px;height: 2px;border-right: 5px;background-color: #4ea2e3;}.cid-rY0INlp3st .close-sidebar span:nth-child(1){-webkit-transform: rotate(45deg);transform: rotate(45deg);}.cid-rY0INlp3st .close-sidebar span:nth-child(2){-webkit-transform: rotate(-45deg);transform: rotate(-45deg);}.cid-rY0INlp3st amp-img{margin-right: 1rem;display: flex;-webkit-align-items: center;align-items: center;height: 45px;width: 45px;}@media (max-width: 767px){.cid-rY0INlp3st amp-img{max-height: 35px;max-width: 35px;}}.cid-rZGQOoqr6m{padding-top: 5%;padding-bottom: 2%;background-color: #ffffff;}.cid-rZGQOoqr6m .mbr-row{-webkit-flex-direction: row-reverse;flex-direction: row-reverse;}.cid-rZGQOoqr6m .btn-container{display: flex;-webkit-align-items: center;align-items: center;-webkit-justify-content: center;justify-content: center;}@media (min-width: 768px){.cid-rZGQOoqr6m .mbr-section-subtitle{margin-bottom: 0;}}.cid-rZGRMWwKPC{padding-top: 30px;padding-bottom: 30px;background-color: #fd83ac;}.cid-rZGRMWwKPC .card-img{margin-bottom: 1rem;display: inline-block;width: 100%;height: 3rem;}.cid-rZGRMWwKPC .card-img .mbr-iconfont{color: #ffffff;font-size: 3rem;width: 3rem;}@media (max-width: 767px){.cid-rZGRMWwKPC .card-img .mbr-iconfont{font-size: 30px;width: 30px;}}@media (max-width: 767px){.cid-rZGRMWwKPC .card-img{height: 30px;}}.cid-rZGRMWwKPC .mbr-card-title,.cid-rZGRMWwKPC .mbr-text{margin: 0;width: 100%;}.cid-rZGUROKDnf{padding-top: 60px;padding-bottom: 60px;background-color: #ffffff;}.cid-rZGUROKDnf .btn-container{display: flex;-webkit-align-items: center;align-items: center;-webkit-justify-content: center;justify-content: center;}@media (min-width: 768px){.cid-rZGUROKDnf .mbr-section-subtitle{margin-bottom: 0;}}.cid-rZGUROKDnf .mbr-section-title{color: #767676;}.cid-rZGUROKDnf .mbr-section-subtitle{color: #767676;}.cid-rZGUzCm4Im{padding-top: 60px;padding-bottom: 60px;background-color: #ffffff;}.cid-rZGUzCm4Im .counter-container ul{margin-bottom: 0;}.cid-rZGUzCm4Im .counter-container ul li{color: inherit;padding-bottom: 1rem;list-style: none;}.cid-rZGUzCm4Im .counter-container ul li:before{box-sizing: inherit;position: absolute;left: 0px;padding-top: 3px;content: '';display: inline-block;text-align: center;margin: 10px 15px;line-height: 20px;transition: all .2s;color: #ffffff;background: #4ea2e3;width: 10px;height: 10px;border-radius: 50%;border-radius: 0;-webkit-transform: rotate(45deg);transform: rotate(45deg);}.cid-rY0ZdbzW3S{padding-top: 60px;padding-bottom: 60px;background-color: #ffffff;}.cid-rY0ZdbzW3S h1{margin-bottom: 20px;}.cid-rY0ZdbzW3S .wrapper{text-align: center;}.cid-rY0ZdbzW3S .icons-list a{display: inline-block;padding: 1rem;margin: .5rem;background: #0dd1ff;}.cid-rY0ZdbzW3S .icons-list a .iconfont-wrapper{display: inline-block;width: 3rem;height: 3rem;}.cid-rY0ZdbzW3S .icons-list a .iconfont-wrapper .amp-iconfont{color: #ffffff;font-size: 3rem;}.cid-rY0Zz28jd7{padding-top: 30px;padding-bottom: 30px;background-color: #fd83ac;}.cid-rY0Zz28jd7 p{margin: 0;color: #ffffff;}.cid-rY0Zz28jd7 .mbr-col-sm-12,.cid-rY0Zz28jd7 .mbr-text{color: #ffffff;}
+.engine{position: absolute;text-indent: -2400px;text-align: center;padding: 0;top: 0;left: -2400px;}[class*="-iconfont"]{display: inline-flex;}</style>
+    
+    
+    
+    <style>
+#qr {
+    width: 640px;
+    border: 1px solid silver
+}
+@media(max-width: 600px) {
+    #qr {
+        width: 300px;
+        border: 1px solid silver
+    }
+}
+button:disabled,
+button[disabled]{
+  opacity: 0.5;
+}
+.scan-type-region {
+    display: block;
+    border: 1px solid silver;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.scan-type-region.disabled {
+    opacity: 0.5;
+}
+.empty {
+    display: block;
+    width: 100%;
+    height: 20px;
+}
+#qr .placeholder {
+    padding: 50px;
+}
+
+.qrcode-text {padding-right:1.7em; margin-right:0}
+.qrcode-text-btn {display:inline-block; background:url(img/qr_icon.svg) 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; vertical-align: middle; cursor:pointer}
+.qrcode-text-btn > input[id=qrscanner] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  /*background-color: rgba(0,0,0, 0.9);*/ /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  display: inline-block;
+  margin-top: 20%; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  margin-left: 20%;
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 10%;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+</style>
+
+  <script src="https://cdn.ampproject.org/v0.js"></script>
+  <script src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+
+      
+</head>
+
+<body>
+<!-- amp -->
+	<!-- amp -->
+	<div id="top-page"></div>                                         <amp-animation id="showScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0.4", "visibility": "visible" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <amp-animation id="hideScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0", "visibility": "hidden" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <div id="scrollToTopMarker">                                             <amp-position-observer on="enter:hideScrollToTopAnim.start; exit:showScrollToTopAnim.start" layout="nodisplay">                                             </amp-position-observer>                                         </div><amp-sidebar id="sidebar" class="cid-rY0INlp3st" layout="nodisplay" side="right">
+        <div class="builder-sidebar" id="builder-sidebar">
+            <button on="tap:sidebar.close" class="close-sidebar">
+                <span></span>
+                <span></span>
+            </button>
+        
+            
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item dropdown">
+                    <a class="nav-link link text-black display-7" href="login"> <!-- data-toggle="dropdown-submenu" aria-expanded="false"> -->
+                        for Customers</a>
+                    <!--  <div class="dropdown-menu">
+                        
+                        <a class="dropdown-item text-black display-7" href="https://mobirise.co"></a>
+                    </div>-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-7" href="vendors">for Vendors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-7" href="https://mobirise.co">
+                        About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-7" th:href="@{/logout}">
+                        Log out</a>
+                </li>
+                
+                
+                </ul>
+            
+            
+      </div>
+    </amp-sidebar>                                        <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0.4", "visibility": "visible" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <amp-animation id="hideScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0", "visibility": "hidden" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation> 
+	<section class="menu horizontal-menu cid-rY0INlp3st" id="menu2-0">
+
+    
+    
+
+    <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
+      <div class="brand">
+          <span class="brand-logo">
+              <amp-img src="img/streetpoints-logo-90x90.png" layout="responsive" width="45" height="45" alt="Mobirise" class="mobirise-loader">
+                  <div placeholder="" class="placeholder">
+                                <div class="mobirise-spinner">
+                                    <em></em>
+                                    <em></em>
+                                    <em></em>
+                                </div></div>
+                  
+              </amp-img>
+          </span>
+          <p class="brand-name mbr-fonts-style mbr-bold display-5">Streetpoints</p>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item dropdown">
+                    <a class="nav-link link text-black display-7" href="login"> <!--  data-toggle="dropdown-submenu" aria-expanded="false">-->
+                        for Customers</a>
+                   <!--   <div class="dropdown-menu">
+                        
+                        <a class="dropdown-item text-black display-7" href="https://mobirise.co"></a>
+                    </div> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-7" href="vendors">for Vendors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-7" th:href="@{/logout}">
+                        Log out</a>
+                </li></ul>
+            
+            
+      </div>
+      
+      <button on="tap:sidebar.toggle" class="ampstart-btn hamburger sticky-but">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    </nav>
+
+  <!-- AMP plug -->
+    
+
+</section>
+
+
+<!-- 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+     <span class="sr-only">Toggle navigation</span> <span
+      class="icon-bar"></span> <span class="icon-bar"></span> <span
+      class="icon-bar"></span>
+    </button>
+                <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+     Login Module</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li sec:authorize="isAuthenticated()"><a th:href="@{/vendorlogout}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+  -->  
+  
+    <!-- 
+    <div class="container">
+        <h2>User Registration and Login Module using Spring Boot, Spring MVC, Spring Security, JPA/Hibernate and Thymeleaf</h2>
+
+        <p>
+            Welcome Vendor <span sec:authentication="name">User</span>
+        </p>
+    </div>
+    -->
+    
+    <section class="engine"></section><section class="info2 cid-rZGQOoqr6m" id="info2-1h">
+
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-8">
+                <h2 class="mbr-section-title align-left mbr-fonts-style mbr-bold display-2">
+                    Welcome <span sec:authentication="name">User</span></h2>
+                <h3 class="mbr-section-subtitle align-left mbr-fonts-style mbr-light display-7">
+                    You can now start to grow your business and connect with your valued customer.</h3>
+            </div>
+            <!-- <div class="btn-container mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">-->
+            <!--     <div class="mbr-section-btn align-center"><div>
+  <input id="customerid" type=text size=16 placeholder="Customer ID" class=qrcode-text><label class=qrcode-text-btn><input id="qrscanner" tabindex=-1></label> 
+<input type=button value="Go" disabled>
+<input type="file" id="qrFile" accept="image/*">
+  </div></div> -->
+           <!--   </div> -->
+        </div>
+    </div>
+</section>
+    
+    
+    
+<div>
+
+  <!-- for qr code scanner -->
+<div class="container">
+
+   <!-- cosmetic -->
+    
+  <div>
+  <input id="customerid" type=text size=16 placeholder="Customer ID" class=qrcode-text><label class=qrcode-text-btn><input id="qrscanner" tabindex=-1></label> 
+<!-- <input th:href="@{/vendorpos}" style="width: 50px;" type=button value="Go"><br />-->
+<input id="btn_submit" style="width: 50px;" type=button value="Go">
+<input type="file" id="qrFile" accept="image/*">
+  </div>
+  <!-- cosmetic -->
+  
+  <!--
+  <div class="row">
+     <div id="myNav" class="overlay">
+
+     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+     <div class="overlay-content">
+       <a href="#">About</a>
+       <a href="#">Services</a>
+       <a href="#">Clients</a>
+       <a href="#">Contact</a>
+     </div>
+  </div>
+</div> -->
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<!--  <button onclick="openNav()">open</button> -->
+
+
+   <div class="row">
+   
+   
+   <!--
+   <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
+   -->
+          <div id="myqr" class="overlay">
+   <!-- 
+       <div id="myqr" class="col-md-12 overlay" style="text-align: center;"> -->
+       <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
+       <div class="overlay-content" id="qr">
+      <!--      <div id="qr" style="display: inline-block;"> -->
+            	<div class="placeholder"></div>
+           </div>
+           <div id="scannedCodeContainer"></div>
+           <div id="feedback"></div>
+       </div>
+       
+       <div style="display:none;" class="col-md-12 scan-type-region camera" id="scanTypeCamera">
+           <div>
+                <input type="radio" name="scan-type" value="camera" checked>
+                <strong>Scan using Camera</strong>&nbsp;&nbsp;
+                <code id="status">Click "Start Scanning"</b></code>
+                <button id="requestPermission" class="btn btn-success btn-sm">Request Permission</button>
+           </div>
+           <div>
+               <div>
+                   <div id="selectCameraContainer" style="display: inline-block;"></div>
+                    <select id="cameraSelection" disabled></select>
+               </div>
+               <div>
+                    <button id="scanButton" class="btn btn-success btn-sm" disabled>start scanning</button>
+                    <button id="stopButton" class="btn btn-warning btn-sm" disabled>stop scanning</button>
+               </div>
+           </div>
+       </div>
+       <div style="display:none;" class="col-md-12 scan-type-region disabled file" id="scanTypeFile">
+           <div>
+                <input type="radio" name="scan-type" value="file">
+                <strong>Scan using file</strong>
+           </div>
+           <div>
+                <input type="file" id="qrInputFile" accept="image/*" disabled> Select Image
+           </div>
+       </div>
+   </div>
+</div>
+
+<!-- 
+<div id="qr" width="400px"></div>
+<input type="file" id="qr-input-file" accept="image/*">
+-->
+<!-- <input type="file" id="qr-input-file" accept="image/*" capture> -->
+<!-- use the appropriate path below -->
+<script src="assets/js/qrcode.js"></script>  
+<script src="assets/js/html5qrcode.js"></script>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}
+
+function sleep(ms) {
+	  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+
+
+docReady(function() {
+	//alert('call docReady');
+	
+    const scanRegionCamera = document.getElementById('scanTypeCamera');
+    const scanRegionFile = document.getElementById('scanTypeFile');
+    const scanButton = document.getElementById('scanButton');
+    const stopButton = document.getElementById('stopButton');
+    const closeNav = document.getElementById('closeNav');
+    
+    const qrFile = document.getElementById('qrFile');
+    const qrFileInput = document.getElementById('qrInputFile');
+    const requestPermissionButton = document.getElementById('requestPermission');
+    const selectCameraContainer = document.getElementById('selectCameraContainer');
+    const cameraSelection = document.getElementById('cameraSelection');
+    const scannedCodeContainer = document.getElementById('scannedCodeContainer');
+    const fileInput = document.getElementById('qrInputFile');
+    const qrscanner = document.getElementById('qrscanner');
+    const feedbackContainer = document.getElementById('feedback');
+    const customerid = document.getElementById('customerid');
+    const statusContainer = document.getElementById('status');
+    const myqr = document.getElementById('myqr');
+
+    const SCAN_TYPE_CAMERA = "camera";
+    const SCAN_TYPE_FILE = "file";
+    var camera = "";
+    var value = "";
+    var name = "name";
+    var cameraId = "cameraId";
+    var stopscan = false;
+	//alert('22');    
+
+    // declaration of html5 qrcode
+    const html5QrCode = new Html5Qrcode("qr", /* verbose= */ true);
+    var currentScanTypeSelection = SCAN_TYPE_CAMERA;
+    var codesFound = 0;
+    var lastMessageFound = null;
+    
+    //qrFileInput.disabled = false;
+    
+	//alert('2');    
+    
+    const setPlaceholder = () => {
+        const placeholder = document.createElement("div");
+        placeholder.innerHTML = "QR viewfinder comes here";
+        placeholder.className = "placeholder";
+        document.getElementById('qr').appendChild(placeholder);
+    }
+    const setFeedback = message => {
+        feedbackContainer.innerHTML = message;
+    }
+    const setStatus = status => {
+        statusContainer.innerHTML = status;
+    }
+    const qrCodeSuccessCallback = qrCodeMessage => {
+    	//alert('qrCodeSuccessCallback');
+    	
+        setStatus("Pattern Found");  
+        setFeedback("");
+       /* if (lastMessageFound === qrCodeMessage.toLocaleLowerCase()) {
+            return;
+        }*/
+        ++codesFound;
+        lastMessageFound = qrCodeMessage.toLocaleLowerCase();
+        const result = document.createElement('div');
+        result.innerHTML = `[${codesFound}] New code found: <strong>${qrCodeMessage}</strong>`;
+        scannedCodeContainer.appendChild(result);
+        // elfee porting
+        customerid.value = qrCodeMessage;
+       // alert('qrCodeMessage = ' + qrCodeMessage);
+        stopscan = true;
+    }
+    const qrCodeErrorCallback = message => {
+        setStatus("Scanning");
+    }
+    const videoErrorCallback = message => {
+        setFeedback(`Video Error, error = ${message}`);
+    }
+    const classExists = (element, needle) => {
+        const classList = element.classList;
+        for (var i = 0; i < classList.length; i++) {
+            if (classList[i] == needle) {
+                return true;
+            }
+        }
+        return false;
+    }
+    const addClass = (element, className) => {
+        if (!element || !className) throw "Both element and className mandatory";
+        if (classExists(element, className)) return;
+        element.classList.add(className);
+    };
+    const removeClass = (element, className) => {
+        if (!element || !className) throw "Both element and className mandatory";
+        if (!classExists(element, className)) return;
+        element.classList.remove(className);
+    }
+    const onScanTypeSelectionChange = event => {
+        const setupFileOption = () => {
+            currentScanTypeSelection = SCAN_TYPE_FILE;
+            html5QrCode.clear();
+            setPlaceholder();
+            if (stopButton.disabled != true) {
+                stopButton.click();
+            }
+            addClass(scanRegionCamera, "disabled");
+            removeClass(scanRegionFile, "disabled");
+            qrFileInput.disabled = false;
+            setFeedback("Select image file to scan QR code.");
+        }
+        const setupCameraOption = () => {
+            currentScanTypeSelection = SCAN_TYPE_CAMERA;
+            html5QrCode.clear();
+            setPlaceholder();
+            qrFileInput.value = "";
+            qrFileInput.disabled = true;
+            removeClass(scanRegionCamera, "disabled");
+            addClass(scanRegionFile, "disabled");
+            setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+        }
+        const val = event.target.value;
+        if (val == 'file') {
+            setupFileOption();
+        } else if (val == 'camera') {
+            setupCameraOption();
+        } else {
+            throw `Unsupported scan type ${val}`;
+        }
+    }
+    
+	//alert('3');    
+    document.querySelectorAll("input[name='scan-type']").forEach(input => {
+        input.addEventListener('change', onScanTypeSelectionChange);
+    });
+    
+   //alert('will add requetpermission event listener');
+   
+   $('#bind').on("click",function(e){
+  	            e.preventDefault();
+  	           // alert('binding');
+  	            var vendorid = $("#myvendor").val();
+  	            var method = $("#method").val();
+  	            
+  	        //    alert('vendorid is ' + vendorid + ' method is ' + method);
+  	            
+  	            
+  	            var token = $('#_csrf').attr('content');
+	            var header = $('#_csrf_header').attr('content');
+	            
+	            if(method.localeCompare("invite")==0){
+
+	            $.ajax({
+	                   type:"POST",
+	                   url:"/binding",
+	                   data:{vendorid:vendorid},
+	                   beforeSend: function(xhr) {
+                           xhr.setRequestHeader(header, token);
+                       },
+	                   success:function (data) {
+	                	 	alert('success');
+	                	 	var rcode = JSON.stringify(data);
+	                	 	
+	                	 	alert('return from server=' + rcode);
+
+	                	 	if(rcode.localeCompare("error")==0) {
+	                	 		window.location.href = "error";
+	                	 	}else{
+						    //Cookies.set('customerid',JSON.stringify(data));
+	               			window.location.href = "vendorpage?reload=true&smsg=invitationSent";
+	               			//window.location.reload();
+	                	 	}
+	                   }
+	                });
+	            }else{
+	            	$.ajax({
+		                   type:"POST",
+		                   url:"/bindingCancel",
+		                   data:{email:vendorid},
+		                   beforeSend: function(xhr) {
+	                           xhr.setRequestHeader(header, token);
+	                       },
+		                   success:function (data) {
+		                	 	alert('success');
+		                	 	var rcode = JSON.stringify(data);
+		                	 	
+		                	 	alert('return from server=' + rcode);
+
+		                	 	if(rcode.localeCompare("error")==0) {
+		                	 		window.location.href = "error";
+		                	 	}else{
+							    //Cookies.set('customerid',JSON.stringify(data));
+		               			window.location.href = "vendorpage?reload=true&smsg=bindingCancel";
+		               			//window.location.reload();
+		                	 	}
+		                   }
+		                });
+	            }
+	            
+
+  	            
+  	            
+  	        //    alert('ajax called success');
+       });
+   
+   $('#refresh').on("click",function(e){
+         // e.preventDefault();
+        //  alert('retrieving history');
+          //var vendorid = $("#myvendor").val();
+          
+          //alert('vendorid is ' + vendorid);
+          
+          var token = $('#_csrf').attr('content');
+        var header = $('#_csrf_header').attr('content');
+
+        $.ajax({
+               type:"POST",
+               url:"/vendorpage",
+               beforeSend: function(xhr) {
+                   xhr.setRequestHeader(header, token);
+               }
+               ,
+               success:function (data) {
+            	 	alert('success');
+            	 	var rcode = JSON.stringify(data);
+            	 	
+            	 	alert('return from server=' + rcode);
+
+            	 	if(rcode.localeCompare("error")==0) {
+            	 		window.location.href = "error";
+            	 	}else{
+				    //Cookies.set('customerid',JSON.stringify(data));
+           			window.location.href = "vendorpage?reload=true";
+           			//window.location.reload();
+            	 	}
+               }
+            });
+          
+          
+         // alert('ajax called success');
+});
+   
+   
+   
+   $('#btn_submit').on("click",function(e){
+	            e.preventDefault();
+	         //   alert('calling vendorpos');
+	            var customerid = $("#customerid").val();
+	         //   alert('customerid is ' + customerid);
+	            
+	            var token = $('#_csrf').attr('content');
+	            var header = $('#_csrf_header').attr('content');
+
+	            $.ajax({
+	                   type:"POST",
+	                   url:"/vendorpos",
+	                   data:{customerid:customerid},
+	                   beforeSend: function(xhr) {
+                           xhr.setRequestHeader(header, token);
+                       },
+	                   success:function (data) {
+	                	 	alert('success');
+	                	 	
+	                	 	var rcode = JSON.stringify(data);
+	                	 	
+	                	 	alert('return from server=' + rcode);
+	                	 	
+	                	 	if(rcode.localeCompare("error")==0) {
+	                	 		window.location.href = "usernotfound";
+	                	 	}else{
+							    //Cookies.set('customerid',JSON.stringify(data));
+		               			window.location.href = "vendorpos";
+		               			//window.location.reload();	
+	                	 	}
+	                   }
+	                });
+	            
+	          //  alert('ajax called success');
+     });
+   
+    
+    requestPermissionButton.addEventListener('click', function() {
+    	
+    	//alert('requestPermission click');
+    	
+        if (currentScanTypeSelection != SCAN_TYPE_CAMERA) return;
+        requestPermissionButton.disabled = true;
+        Html5Qrcode.getCameras().then(cameras => {
+            selectCameraContainer.innerHTML = `Select Camera (${cameras.length})`;
+            if (cameras.length == 0) {
+                return setFeedback("Error: Zero cameras found in the device");
+            }
+            for (var i = 0; i < cameras.length; i++) {
+                const camera = cameras[i];
+                const value = camera.id;
+                const name = camera.label == null ? value : camera.label;
+                const option = document.createElement('option');
+                option.value = value;
+                option.innerHTML = name;
+                cameraSelection.appendChild(option);
+            }
+            cameraSelection.disabled = false;
+            scanButton.disabled = false;
+            scanButton.addEventListener('click', () => {
+                if (currentScanTypeSelection != SCAN_TYPE_CAMERA) return;
+                const cameraId = cameraSelection.value;
+                cameraSelection.disabled = true;
+                scanButton.disabled = true;
+                // Start scanning.
+                html5QrCode.start(
+                    cameraId, 
+                    {
+                        fps: 10,
+                        qrbox: 250
+                    },
+                    qrCodeSuccessCallback,
+                    qrCodeErrorCallback)
+                    .then(_ => {
+                        stopButton.disabled = false;
+                        setStatus("scanning");
+                        setFeedback("");
+                    })
+                    .catch(error => {
+                        cameraSelection.disabled = false;
+                        scanButton.disabled = false;
+                        videoErrorCallback(error);
+                    });
+            });
+            
+            //alert('requestpermission add listener!');
+            
+            stopButton.addEventListener('click', function() {
+                stopButton.disabled = true;
+                html5QrCode.stop().then(ignore => {
+                    cameraSelection.disabled = false;
+                    scanButton.disabled = false;
+                    setFeedback('Stopped');
+                    setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+                    scannedCodeContainer.innerHTML = "";
+                    setPlaceholder();
+                }).catch(err => {
+                    stopButton.disabled = false;
+                    setFeedback('Error');
+                    setFeedback("Race condition, unable to close the scan.");
+                });
+            });
+        }).catch(err => {
+            requestPermissionButton.disabled = false;
+            setFeedback(`Error: Unable to query any cameras. Reason: ${err}`);
+        });
+    });
+    // File based scanning
+    fileInput.addEventListener('change', e => {
+        if (currentScanTypeSelection != SCAN_TYPE_FILE) return;
+        if (e.target.files.length == 0) {
+            return;
+        }
+        const file = e.target.files[0];
+        html5QrCode.scanFile(file, true)
+        .then(qrCodeSuccessCallback)
+        .catch(err => setFeedback(`Error scanning file. Reason: ${err}`));
+    });
+    
+ // File based scanning
+    qrFile.addEventListener('change', e => {
+       // if (currentScanTypeSelection != SCAN_TYPE_FILE) return;
+        if (e.target.files.length == 0) {
+            return;
+        }
+        const file = e.target.files[0];
+        html5QrCode.clear();
+        html5QrCode.scanFile(file, true)
+        .then(qrCodeSuccessCallback)
+        .catch(err => setFeedback(`Error scanning file. Reason: ${err}`));
+    });
+    
+    
+	//alert('javascript ended');
+//	alert('qrscanner loading');
+
+    qrscanner.addEventListener('click', async function() {
+    	
+    	 // Start scanning.
+    	 scanButton.addEventListener('click', () => {
+    	                if (currentScanTypeSelection != SCAN_TYPE_CAMERA) return;
+    	                const cameraId = cameraSelection.value;
+    	                cameraSelection.disabled = true;
+    	                scanButton.disabled = true;
+    	                // Start scanning.
+    	                html5QrCode.start(
+    	                    cameraId, 
+    	                    {
+    	                        fps: 10,
+    	                        qrbox: 250
+    	                    },
+    	                    qrCodeSuccessCallback,
+    	                    qrCodeErrorCallback)
+    	                    .then(_ => {
+    	                        stopButton.disabled = false;
+    	                        setStatus("scanning");
+    	                        setFeedback("");
+    	                    })
+    	                    .catch(error => {
+    	                        cameraSelection.disabled = false;
+    	                        scanButton.disabled = false;
+    	                        videoErrorCallback(error);
+    	                    });
+    	            });
+    	 
+    	 stopButton.addEventListener('click', function() {
+    	     stopButton.disabled = true;
+    	     html5QrCode.stop().then(ignore => {
+    	         cameraSelection.disabled = false;
+    	         scanButton.disabled = false;
+    	         setFeedback('Stopped');
+    	         setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+    	         scannedCodeContainer.innerHTML = "";
+    	         setPlaceholder();
+    	     }).catch(err => {
+    	         stopButton.disabled = false;
+    	         setFeedback('Error');
+    	         setFeedback("Race condition, unable to close the scan.");
+    	     });
+    	 });	
+    	 
+    	 closeNav.addEventListener('click', function() {
+             
+    		 stopscan = true;
+    		 /*stopButton.disabled = true;
+             html5QrCode.stop().then(ignore => {
+                 cameraSelection.disabled = false;
+                 scanButton.disabled = false;
+                 setFeedback('Stopped');
+                 setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+                 scannedCodeContainer.innerHTML = "";
+                 setPlaceholder();
+                 stopscan = true;
+                 document.getElementById("myNav").style.width = "0%";
+             }).catch(err => {
+                 stopButton.disabled = false;
+                 setFeedback('Error');
+                 setFeedback("Race condition, unable to close the scan.");
+             });*/
+         });
+    	
+    
+    //if (currentScanTypeSelection != SCAN_TYPE_CAMERA) return;
+    //requestPermissionButton.disabled = true;
+    //await sleep(2000);
+    
+   //alert('getting access to camera');
+   stopscan = false;
+   
+  myqr.style.width = "100%";
+  
+  //alert('set myqr style width 100%');
+
+    
+    const html5QrCode = new Html5Qrcode("qr", /* verbose= */ true);
+    Html5Qrcode.getCameras().then(cameras => {
+    	if (cameras.length == 0) {
+        	alert('Error: Zero cameras found in the device');
+            return;
+        }
+    	
+    	for (var i = 0; i < cameras.length; i++) {
+            const camera = cameras[i];
+            value = camera.id;
+            name = camera.label == null ? value : camera.label;
+        }
+    	cameraSelection.disabled = false;
+        scanButton.disabled = false;
+        cameraId = value;
+        //alert('cameraId1= ' + cameraId);
+        cameraSelection.disabled = true;
+        scanButton.disabled = true;
+        //alert('cameraId2= ' + cameraId);
+           html5QrCode.start(
+               cameraId, 
+               {
+                   fps: 10,
+                   qrbox: 250
+               },
+               qrCodeSuccessCallback,
+               qrCodeErrorCallback)
+               .then(_ => {
+                   stopButton.disabled = false;
+                   setStatus("scanning");
+                   setFeedback("");
+               })
+               .catch(error => {
+                   cameraSelection.disabled = false;
+                   scanButton.disabled = false;
+                   videoErrorCallback(error);
+               });
+        
+     
+    });
+    
+
+ 
+
+    
+    
+    while(!stopscan){
+    	await sleep(2000);
+    }
+    
+    stopButton.disabled = true;
+    html5QrCode.stop().then(ignore => {
+        cameraSelection.disabled = false;
+        scanButton.disabled = false;
+        setFeedback('Stopped');
+        setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+        scannedCodeContainer.innerHTML = "";
+        //setPlaceholder();
+        stopscan = true;
+    }).catch(err => {
+        stopButton.disabled = false;
+        setFeedback('Error');
+        setFeedback("Race condition, unable to close the scan.");
+    });
+
+  myqr.style.width = "0%";
+
+  //alert('set myqr style width 0%');
+
+    /*
+    Html5Qrcode.getCameras().then(cameras => {
+        //selectCameraContainer.innerHTML = `Select Camera (${cameras.length})`;
+        if (cameras.length == 0) {
+        	alert('Error: Zero cameras found in the device');
+            return;
+        }
+        
+        const camera;
+        const value;
+        const name;
+        
+        for (var i = 0; i < cameras.length; i++) {
+            camera = cameras[i];
+            value = camera.id;
+            name = camera.label == null ? value : camera.label;
+            alert('camera = ' + name);
+        }
+        const cameraId = value;
+        cameraSelection.disabled = true;
+        scanButton.disabled = true;
+        
+        html5QrCode.start(
+            cameraId, 
+            {
+               fps: 10,
+               qrbox: 250
+            },
+                qrCodeSuccessCallback,
+                qrCodeErrorCallback)
+                .then(_ => {
+                    //stopButton.disabled = false;
+                    //setStatus("scanning");
+                    //setFeedback("");
+                })
+                .catch(error => {
+                    //cameraSelection.disabled = false;
+                    //scanButton.disabled = false;
+                    //videoErrorCallback(error);
+                });
+    });*/
+    });
+/*    
+    Html5Qrcode.getCameras().then(cameras => {
+        //selectCameraContainer.innerHTML = `Select Camera (${cameras.length})`;
+        if (cameras.length == 0) {
+        	alert('Error: Zero cameras found in the device');
+            return;
+        }
+        
+        const camera;
+        const value;
+        const name;
+        
+        for (var i = 0; i < cameras.length; i++) {
+            camera = cameras[i];
+            value = camera.id;
+            name = camera.label == null ? value : camera.label;
+            alert('camera = ' + name);
+        }
+        const cameraId = value;
+        cameraSelection.disabled = true;
+        scanButton.disabled = true;
+        
+        html5QrCode.start(
+            cameraId, 
+            {
+               fps: 10,
+               qrbox: 250
+            },
+                qrCodeSuccessCallback,
+                qrCodeErrorCallback)
+                .then(_ => {
+                    //stopButton.disabled = false;
+                    //setStatus("scanning");
+                    //setFeedback("");
+                })
+                .catch(error => {
+                    //cameraSelection.disabled = false;
+                    //scanButton.disabled = false;
+                    //videoErrorCallback(error);
+                });
+        
+        //while(!stopscan){
+        	  //await sleep(2000);
+        //}        
+	});
+});    */
+});
+</script>
+</div>
+
+<section class="features15 mbr-section cid-rZGRMWwKPC" id="features3-1i">
+
+    
+    
+    <div class="container">
+        <div class="mbr-row mbr-justify-content-center">
+            <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
+                <div class="iconfont-wrapper card-img align-center">
+                    <span class="mbr-iconfont mbri-star"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 32 32" fill="rgb(255, 255, 255)">
+<title>mbri-star</title>
+<path d="M16 0c-0.255-0.002-0.483 0.142-0.596 0.37l-4.529 9.057-10.37 2.594c-0.477 0.119-0.665 0.695-0.352 1.073l6.482 7.779-1.297 10.378c-0.067 0.536 0.497 0.925 0.974 0.672l9.688-5.167 9.688 5.167c0.477 0.253 1.041-0.136 0.974-0.672l-1.297-10.378 6.482-7.779c0.314-0.378 0.125-0.954-0.352-1.073l-10.37-2.594-4.529-9.057c-0.112-0.225-0.345-0.368-0.596-0.37zM16 2.156l4.070 8.141c0.087 0.174 0.246 0.302 0.435 0.349l9.635 2.409-5.987 7.185c-0.118 0.142-0.172 0.327-0.148 0.51l1.174 9.391-8.867-4.729c-0.195-0.104-0.43-0.104-0.625 0l-8.867 4.729 1.174-9.391c0.023-0.183-0.030-0.368-0.148-0.51l-5.987-7.185 9.635-2.409c0.189-0.047 0.348-0.175 0.435-0.349z"></path>
+</svg></span>
+                </div>
+                <h3 class="mbr-card-title mbr-fonts-style align-center mbr-white display-7">Total Points distributed</h3>
+                <p class="mbr-text mbr-fonts-style align-center mbr-white display-4">
+                    Your accumulated Streetpoints <b th:if="${tpoints!=null}" th:text="${tpoints}">0</b></p>
+                             
+            </div>
+            
+            <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
+                <div class="iconfont-wrapper card-img align-center">
+                    <span class="mbr-iconfont mbri-shopping-basket"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 32 32" fill="rgb(255, 255, 255)">
+<title>mbri-shopping-basket</title>
+<path d="M22 14.667c0.369 0 0.667 0.297 0.667 0.667v9.333c0 0.369-0.297 0.667-0.667 0.667s-0.667-0.297-0.667-0.667v-9.333c0-0.369 0.297-0.667 0.667-0.667zM15.333 14.667c0.369 0 0.667 0.297 0.667 0.667v9.333c0 0.369-0.297 0.667-0.667 0.667s-0.667-0.297-0.667-0.667v-9.333c0-0.369 0.297-0.667 0.667-0.667zM8.667 14.667c0.369 0 0.667 0.297 0.667 0.667v9.333c0 0.369-0.297 0.667-0.667 0.667s-0.667-0.297-0.667-0.667v-9.333c0-0.369 0.297-0.667 0.667-0.667zM20.684 1.333c0.173 0.005 0.337 0.075 0.457 0.199l5.321 5.321c0.624 0.599-0.339 1.567-0.941 0.941l-5.321-5.321c-0.399-0.399-0.132-1.139 0.483-1.139zM9.983 1.334c-0.173 0.005-0.337 0.077-0.457 0.2l-5.321 5.321c-0.621 0.596 0.337 1.57 0.941 0.941l5.321-5.321c0.422-0.413 0.113-1.141-0.483-1.141zM2.711 9.333c-0.919 0-1.72 0.412-2.19 1.068s-0.619 1.512-0.461 2.385l2.659 14.667c0.15 0.829 0.487 1.61 1.042 2.211s1.354 1.003 2.273 1.003h18.599c0.919 0 1.719-0.402 2.273-1.003s0.891-1.382 1.042-2.211l2.659-14.667c0.158-0.873 0.009-1.729-0.461-2.385s-1.271-1.068-2.19-1.068zM2.711 10.667h25.245c0.553 0 0.882 0.196 1.107 0.51s0.337 0.789 0.232 1.37l-2.659 14.667c-0.113 0.624-0.368 1.178-0.708 1.547s-0.741 0.573-1.294 0.573h-18.599c-0.553 0-0.954-0.204-1.294-0.573s-0.595-0.922-0.708-1.547l-2.659-14.667c-0.105-0.581 0.007-1.056 0.232-1.37s0.554-0.51 1.107-0.51z"></path>
+</svg></span>
+                </div>        
+                <h3 class="mbr-card-title mbr-fonts-style align-center mbr-white display-7">Transaction (#)</h3>
+                <p class="mbr-text mbr-fonts-style align-center mbr-white display-4">
+                    Total number of Transaction   <b th:if="${ttransaction!=null}" th:text="${ttransaction}">0</b>   </p>
+                 
+            </div>
+        
+            <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
+                <div class="iconfont-wrapper card-img align-center">
+                    <span class="mbr-iconfont mbri-cash"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 32 32" fill="rgb(255, 255, 255)">
+<title>mbri-cash</title>
+<path d="M7.333 5.333c-0.451-0.006-0.667 0.33-0.667 0.667s0.216 0.673 0.667 0.667h22.667c0.381 0 0.667 0.286 0.667 0.667v13.333c-0.006 0.451 0.33 0.667 0.667 0.667s0.673-0.216 0.667-0.667v-13.333c0-1.096-0.904-2-2-2zM4.667 8c-0.451-0.006-0.667 0.33-0.667 0.667s0.216 0.673 0.667 0.667h22.667c0.381 0 0.667 0.286 0.667 0.667v13.333c-0.006 0.451 0.33 0.667 0.667 0.667s0.673-0.216 0.667-0.667v-13.333c0-1.096-0.904-2-2-2zM2 10.667c-1.096 0-2 0.904-2 2v13.333c0 1.096 0.904 2 2 2h22.667c1.096 0 2-0.904 2-2v-13.333c0-1.096-0.904-2-2-2zM2 12h22.667c0.381 0 0.667 0.286 0.667 0.667v13.333c0 0.381-0.286 0.667-0.667 0.667h-22.667c-0.381 0-0.667-0.286-0.667-0.667v-13.333c0-0.381 0.286-0.667 0.667-0.667zM3.333 13.333c-0.368 0-0.667 0.299-0.667 0.667v2.667c-0.006 0.451 0.33 0.667 0.667 0.667s0.673-0.216 0.667-0.667v-2h2c0.451 0.006 0.667-0.33 0.667-0.667s-0.216-0.673-0.667-0.667zM12.667 13.333c-3.306 0-6 2.694-6 6s2.694 6 6 6c3.306 0 6-2.694 6-6s-2.694-6-6-6zM20.667 14.667h2v2c-0.006 0.451 0.33 0.667 0.667 0.667s0.673-0.216 0.667-0.667v-2.667c-0-0.368-0.299-0.667-0.667-0.667h-2.667c-0.464 0-0.667 0.279-0.667 0.667s0.182 0.667 0.667 0.667zM12.667 14.667c2.585 0 4.667 2.081 4.667 4.667s-2.081 4.667-4.667 4.667c-2.585 0-4.667-2.081-4.667-4.667s2.081-4.667 4.667-4.667zM12.667 16c-1.094 0-2 0.906-2 2s0.906 2 2 2c0.373 0 0.667 0.283 0.667 0.667s-0.294 0.667-0.667 0.667h-1.333c-0.451-0.006-0.667 0.33-0.667 0.667s0.216 0.673 0.667 0.667h1.333c1.094 0 2-0.906 2-2s-0.906-2-2-2c-0.373 0-0.667-0.283-0.667-0.667s0.294-0.667 0.667-0.667h1.333c0.451 0.006 0.667-0.33 0.667-0.667s-0.216-0.673-0.667-0.667zM3.333 21.333c-0.376-0.006-0.673 0.29-0.667 0.667v2.667c0 0.368 0.298 0.667 0.667 0.667h2.667c0.451 0.006 0.667-0.33 0.667-0.667s-0.216-0.673-0.667-0.667h-2v-2c0.006-0.368-0.298-0.661-0.667-0.667zM23.333 21.333c-0.368 0.006-0.672 0.298-0.667 0.667v2h-2c-0.451-0.006-0.667 0.33-0.667 0.667s0.216 0.673 0.667 0.667h2.667c0.368-0 0.667-0.299 0.667-0.667v-2.667c0.006-0.376-0.29-0.673-0.667-0.667z"></path>
+</svg></span>
+                </div>
+                <h3 class="mbr-card-title mbr-fonts-style align-center mbr-white display-7">Transaction (THB)</h3>
+                <p class="mbr-text mbr-fonts-style align-center mbr-white display-4">
+                    Total amount of Transaction <b th:if="${tamount!=null}" th:text="${tamount}">0</b></p>
+                
+            </div>
+        
+            
+        
+        </div>
+    </div>
+</section>
+
+<section class="info1 cid-rZGUROKDnf" id="info1-1m">
+
+    
+
+    <div class="container">
+        <div class="mbr-row mbr-justify-content-center">
+            <div class="mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
+                <h2 class="mbr-section-title align-left mbr-fonts-style mbr-bold mbr-white display-2">Order History</h2>
+                <h3 class="mbr-section-subtitle align-left mbr-fonts-style mbr-light mbr-white display-7">
+                    Below is your order history. Click the button on the right to refresh the list.</h3>
+            </div>
+            <div class="btn-container mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
+                <div>
+                <div>
+  					<label for="vendors">Select vendor</label>
+  					<select id="myvendor" name="vendors">
+    				<option th:each="vendors : ${allvendors}" th:value="${vendors.email}" th:text="${vendors.email}">vendor</option>
+  					</select>
+  				</div>
+  				<div>
+  					<label for="method">Action</label>
+  					<select id="method" name="method">
+  					<option value="invite">invite</option>
+  					<option value="cancel">cancel</option>
+  					</select>
+  					<input id="bind" type="submit" value="Submit" style="border-color: #fd83ac; background-color: #fd83ac; color: #ffffff; border: none; padding: 15px 12px;">
+            	    <div th:if="${smsg}">
+                        <div style="font-size: 1px;" th:text="${smsg}">smsg
+                        </div>
+                    </div>
+            	</div>
+            	</div>
+            	</div>
+            	<div class="btn-container mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
+                	<div class="mbr-section-btn align-center"><div id="refresh" class="btn btn-info display-4">Refresh</div></div>
+            	</div>
+        </div>
+    </div>
+</section>
+
+<section class="content7 mbr-section cid-rZGUzCm4Im" id="content7-1l">
+     
+
+    <div class="mbr-container">
+        <div class="mbr-text counter-container mbr-fonts-style display-7">
+      <!--   <table>
+         <tr th:each="bookkeeping : ${bookkeepings}">
+         <td th:text="${bookkeeping.consensustime}">consensustime</td>
+         <td th:text="${bookkeeping.user}">user</td>
+        <td th:text="${bookkeeping.points}">points</td>
+        <td th:text="${bookkeeping.amount}">amount</td>
+        <td th:text="${bookkeeping.transaction}">transaction</td>
+        </tr>
+        
+        </table>
+        -->
+         
+        <ul>
+            <li th:each="bookkeeping : ${bookkeepings}">
+        <strong th:text="${bookkeeping.consensustime}">consensustime</strong>
+        User <strong th:text="${bookkeeping.user}">user</strong>
+         had collected <strong th:text="${bookkeeping.points}">points</strong> points
+         and paid <strong th:text="${bookkeeping.amount}">amount</strong> THB
+         and completed <strong th:text="${bookkeeping.transaction}">transaction</strong> transactions
+        </li>        
+           </ul>
+           
+           
+           <!-- <ul>
+            
+                <li><strong>PADTHAI THIPSAMAI&nbsp;</strong>- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nisi debitis quibusdam sint, in neque ut sapiente saepe reiciendis quia, amet, accusamus alias numquam ipsum quo quae deserunt laborum sed! <a href="https://mobirise.co/">Try it now!</a></li>
+                <li><strong>MON NOM SOD</strong>&nbsp;- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nihil ut soluta eos, sint ex ad tenetur dolore at inventore, ipsam ullam molestiae magnam repellat quod earum in sed assumenda! <a href="https://mobirise.co/">Try it now!</a></li>
+                <li><strong>COFFEE BEAN BY DAO&nbsp;</strong>- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam nulla assumenda magni temporibus sapiente optio ullam quia. Deserunt quod a ab, ullam ea sed, corrupti consequuntur necessitatibus maiores exercitationem ut. <a href="https://mobirise.co/">Try it now!</a></li>
+            </ul> -->
+        </div>
+    </div>
+</section>
+
+
+<section class="footer1 cid-rY0Zz28jd7" id="footer1-9">
+
+    
+
+    <div class="container">
+        <div class="mbr-col-sm-12 align-center mbr-white">
+            <p class="mbr-text mbr-fonts-style display-7">
+                © Copyright 2020 Dodonpa Media Limited Partnership - All Rights Reserved
+            </p>
+        </div>
+    </div>
+</section>
+  <!--   <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script> -->
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>

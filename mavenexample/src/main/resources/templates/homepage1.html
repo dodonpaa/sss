@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="header :: common-header">
+    <title>Admin Page</title>
+</head>
+
+<body>
+
+<div th:replace="navbar :: common-navbar"></div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+
+            <div class="well">
+
+                <div th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+                    Secret Content
+                </div>
+
+                <div class="starter-template">
+                    <h1>Hello Administrator!</h1>
+                    <p class="lead">This page allows you to perform administrative tasks</p>
+                    <form id="f" th:action="@{/logout}" method="post" role="form" class="form-group">
+                        <input type="submit" value="Logout" class="btn btn-primary" />
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div><!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<div th:include="header :: before-body-script">
+
+</div>
+</body>
+</html>

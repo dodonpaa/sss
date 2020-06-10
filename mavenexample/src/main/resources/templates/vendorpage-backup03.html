@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.thymeleaf.org http://www.thymeleaf.org
+  http://www.ultraq.net.nz/thymeleaf/layout http://www.ultraq.net.nz/thymeleaf/layout
+  http://www.thymeleaf.org/thymeleaf-extras-springsecurity4 http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+
+    <title>Registration</title>   
+    
+    <style>
+#qr {
+    width: 640px;
+    border: 1px solid silver
+}
+@media(max-width: 600px) {
+    #qr {
+        width: 300px;
+        border: 1px solid silver
+    }
+}
+button:disabled,
+button[disabled]{
+  opacity: 0.5;
+}
+.scan-type-region {
+    display: block;
+    border: 1px solid silver;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.scan-type-region.disabled {
+    opacity: 0.5;
+}
+.empty {
+    display: block;
+    width: 100%;
+    height: 20px;
+}
+#qr .placeholder {
+    padding: 50px;
+}
+
+.qrcode-text {padding-right:1.7em; margin-right:0}
+.qrcode-text-btn {display:inline-block; background:url(img/qr_icon.svg) 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; vertical-align: middle; cursor:pointer}
+.qrcode-text-btn > input[id=qrscanner] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  /*background-color: rgba(0,0,0, 0.9);*/ /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  display: inline-block;
+  margin-top: 20%; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  margin-left: 20%;
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+</style>
+      
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+     <span class="sr-only">Toggle navigation</span> <span
+      class="icon-bar"></span> <span class="icon-bar"></span> <span
+      class="icon-bar"></span>
+    </button>
+                <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+     Login Module</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li sec:authorize="isAuthenticated()"><a th:href="@{/vendorlogout}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    
+  
+    
+    <div class="container">
+        <h2>User Registration and Login Module using Spring Boot, Spring MVC, Spring Security, JPA/Hibernate and Thymeleaf</h2>
+
+        <p>
+            Welcome Vendor <span sec:authentication="name">User</span>
+        </p>
+    </div>
+    
+<div>
+
+  <!-- for qr code scanner -->
+<div class="container">
+
+   <!-- cosmetic -->
+  <div>
+<!--    <input type=text size=16 placeholder="Customer ID" class=qrcode-text><label class=qrcode-text-btn><input type=file  accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label> -->
+  <input id="customerid" type=text size=16 placeholder="Customer ID" class=qrcode-text><label class=qrcode-text-btn><input id="qrscanner" tabindex=-1></label> 
+<input type=button value="Go" disabled>
+<input type="file" id="qrFile" accept="image/*">
+
+  </div>
+  <!-- cosmetic -->
+  
+  <!--
+  <div class="row">
+     <div id="myNav" class="overlay">
+
+     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+     <div class="overlay-content">
+       <a href="#">About</a>
+       <a href="#">Services</a>
+       <a href="#">Clients</a>
+       <a href="#">Contact</a>
+     </div>
+  </div>
+</div> -->
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<!--  <button onclick="openNav()">open</button> -->
+
+
+   <div class="row">
+   
+   
+   <!--
+   <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
+   -->
+          <div id="myqr" class="overlay">
+   <!-- 
+       <div id="myqr" class="col-md-12 overlay" style="text-align: center;"> -->
+       <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
+       <div class="overlay-content" id="qr">
+      <!--      <div id="qr" style="display: inline-block;"> -->
+            	<div class="placeholder"></div>
+           </div>
+           <div id="scannedCodeContainer"></div>
+           <div id="feedback"></div>
+       </div>
+       
+       <div style="display:none;" class="col-md-12 scan-type-region camera" id="scanTypeCamera">
+           <div>
+                <input type="radio" name="scan-type" value="camera" checked>
+                <strong>Scan using Camera</strong>&nbsp;&nbsp;
+                <code id="status">Click "Start Scanning"</b></code>
+                <button id="requestPermission" class="btn btn-success btn-sm">Request Permission</button>
+           </div>
+           <div>
+               <div>
+                   <div id="selectCameraContainer" style="display: inline-block;"></div>
+                    <select id="cameraSelection" disabled></select>
+               </div>
+               <div>
+                    <button id="scanButton" class="btn btn-success btn-sm" disabled>start scanning</button>
+                    <button id="stopButton" class="btn btn-warning btn-sm" disabled>stop scanning</button>
+               </div>
+           </div>
+       </div>
+       <div style="display:none;" class="col-md-12 scan-type-region disabled file" id="scanTypeFile">
+           <div>
+                <input type="radio" name="scan-type" value="file">
+                <strong>Scan using file</strong>
+           </div>
+           <div>
+                <input type="file" id="qrInputFile" accept="image/*" disabled> Select Image
+           </div>
+       </div>
+   </div>
+</div>
+
+<!-- 
+<div id="qr" width="400px"></div>
+<input type="file" id="qr-input-file" accept="image/*">
+-->
+<!-- <input type="file" id="qr-input-file" accept="image/*" capture> -->
+<!-- use the appropriate path below -->
+<script src="assets/js/qrcode.js"></script>  
+<script src="assets/js/html5qrcode.js"></script>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}
+
+function sleep(ms) {
+	  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+
+
+docReady(function() {
+	alert('call docReady');
+	
+    const scanRegionCamera = document.getElementById('scanTypeCamera');
+    const scanRegionFile = document.getElementById('scanTypeFile');
+    const scanButton = document.getElementById('scanButton');
+    const stopButton = document.getElementById('stopButton');
+    const closeNav = document.getElementById('closeNav');
+    
+    const qrFile = document.getElementById('qrFile');
+    const qrFileInput = document.getElementById('qrInputFile');
+    const requestPermissionButton = document.getElementById('requestPermission');
+    const selectCameraContainer = document.getElementById('selectCameraContainer');
+    const cameraSelection = document.getElementById('cameraSelection');
+    const scannedCodeContainer = document.getElementById('scannedCodeContainer');
+    const fileInput = document.getElementById('qrInputFile');
+    const qrscanner = document.getElementById('qrscanner');
+    const feedbackContainer = document.getElementById('feedback');
+    const customerid = document.getElementById('customerid');
+    const statusContainer = document.getElementById('status');
+    const myqr = document.getElementById('myqr');
+
+    const SCAN_TYPE_CAMERA = "camera";
+    const SCAN_TYPE_FILE = "file";
+    var camera = "";
+    var value = "";
+    var name = "name";
+    var cameraId = "cameraId";
+    var stopscan = false;
+	//alert('22');    
+
+    // declaration of html5 qrcode
+    const html5QrCode = new Html5Qrcode("qr", /* verbose= */ true);
+    var currentScanTypeSelection = SCAN_TYPE_CAMERA;
+    var codesFound = 0;
+    var lastMessageFound = null;
+    
+    //qrFileInput.disabled = false;
+    
+	//alert('2');    
+    
+    const setPlaceholder = () => {
+        const placeholder = document.createElement("div");
+        placeholder.innerHTML = "QR viewfinder comes here";
+        placeholder.className = "placeholder";
+        document.getElementById('qr').appendChild(placeholder);
+    }
+    const setFeedback = message => {
+        feedbackContainer.innerHTML = message;
+    }
+    const setStatus = status => {
+        statusContainer.innerHTML = status;
+    }
+    const qrCodeSuccessCallback = qrCodeMessage => {
+    	alert('qrCodeSuccessCallback');
+    	
+        setStatus("Pattern Found");  
+        setFeedback("");
+       /* if (lastMessageFound === qrCodeMessage.toLocaleLowerCase()) {
+            return;
+        }*/
+        ++codesFound;
+        lastMessageFound = qrCodeMessage.toLocaleLowerCase();
+        const result = document.createElement('div');
+        result.innerHTML = `[${codesFound}] New code found: <strong>${qrCodeMessage}</strong>`;
+        scannedCodeContainer.appendChild(result);
+        // elfee porting
+        customerid.value = qrCodeMessage;
+        alert('qrCodeMessage = ' + qrCodeMessage);
+        stopscan = true;
+    }
+    const qrCodeErrorCallback = message => {
+        setStatus("Scanning");
+    }
+    const videoErrorCallback = message => {
+        setFeedback(`Video Error, error = ${message}`);
+    }
+    const classExists = (element, needle) => {
+        const classList = element.classList;
+        for (var i = 0; i < classList.length; i++) {
+            if (classList[i] == needle) {
+                return true;
+            }
+        }
+        return false;
+    }
+    const addClass = (element, className) => {
+        if (!element || !className) throw "Both element and className mandatory";
+        if (classExists(element, className)) return;
+        element.classList.add(className);
+    };
+    const removeClass = (element, className) => {
+        if (!element || !className) throw "Both element and className mandatory";
+        if (!classExists(element, className)) return;
+        element.classList.remove(className);
+    }
+    const onScanTypeSelectionChange = event => {
+        const setupFileOption = () => {
+            currentScanTypeSelection = SCAN_TYPE_FILE;
+            html5QrCode.clear();
+            setPlaceholder();
+            if (stopButton.disabled != true) {
+                stopButton.click();
+            }
+            addClass(scanRegionCamera, "disabled");
+            removeClass(scanRegionFile, "disabled");
+            qrFileInput.disabled = false;
+            setFeedback("Select image file to scan QR code.");
+        }
+        const setupCameraOption = () => {
+            currentScanTypeSelection = SCAN_TYPE_CAMERA;
+            html5QrCode.clear();
+            setPlaceholder();
+            qrFileInput.value = "";
+            qrFileInput.disabled = true;
+            removeClass(scanRegionCamera, "disabled");
+            addClass(scanRegionFile, "disabled");
+            setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+        }
+        const val = event.target.value;
+        if (val == 'file') {
+            setupFileOption();
+        } else if (val == 'camera') {
+            setupCameraOption();
+        } else {
+            throw `Unsupported scan type ${val}`;
+        }
+    }
+    
+	//alert('3');    
+    document.querySelectorAll("input[name='scan-type']").forEach(input => {
+        input.addEventListener('change', onScanTypeSelectionChange);
+    });
+    
+   //alert('will add requetpermission event listener');
+   
+   
+   
+    
+    requestPermissionButton.addEventListener('click', function() {
+    	
+    	//alert('requestPermission click');
+    	
+        if (currentScanTypeSelection != SCAN_TYPE_CAMERA) return;
+        requestPermissionButton.disabled = true;
+        Html5Qrcode.getCameras().then(cameras => {
+            selectCameraContainer.innerHTML = `Select Camera (${cameras.length})`;
+            if (cameras.length == 0) {
+                return setFeedback("Error: Zero cameras found in the device");
+            }
+            for (var i = 0; i < cameras.length; i++) {
+                const camera = cameras[i];
+                const value = camera.id;
+                const name = camera.label == null ? value : camera.label;
+                const option = document.createElement('option');
+                option.value = value;
+                option.innerHTML = name;
+                cameraSelection.appendChild(option);
+            }
+            cameraSelection.disabled = false;
+            scanButton.disabled = false;
+            scanButton.addEventListener('click', () => {
+                if (currentScanTypeSelection != SCAN_TYPE_CAMERA) return;
+                const cameraId = cameraSelection.value;
+                cameraSelection.disabled = true;
+                scanButton.disabled = true;
+                // Start scanning.
+                html5QrCode.start(
+                    cameraId, 
+                    {
+                        fps: 10,
+                        qrbox: 250
+                    },
+                    qrCodeSuccessCallback,
+                    qrCodeErrorCallback)
+                    .then(_ => {
+                        stopButton.disabled = false;
+                        setStatus("scanning");
+                        setFeedback("");
+                    })
+                    .catch(error => {
+                        cameraSelection.disabled = false;
+                        scanButton.disabled = false;
+                        videoErrorCallback(error);
+                    });
+            });
+            
+            //alert('requestpermission add listener!');
+            
+            stopButton.addEventListener('click', function() {
+                stopButton.disabled = true;
+                html5QrCode.stop().then(ignore => {
+                    cameraSelection.disabled = false;
+                    scanButton.disabled = false;
+                    setFeedback('Stopped');
+                    setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+                    scannedCodeContainer.innerHTML = "";
+                    setPlaceholder();
+                }).catch(err => {
+                    stopButton.disabled = false;
+                    setFeedback('Error');
+                    setFeedback("Race condition, unable to close the scan.");
+                });
+            });
+        }).catch(err => {
+            requestPermissionButton.disabled = false;
+            setFeedback(`Error: Unable to query any cameras. Reason: ${err}`);
+        });
+    });
+    // File based scanning
+    fileInput.addEventListener('change', e => {
+        if (currentScanTypeSelection != SCAN_TYPE_FILE) return;
+        if (e.target.files.length == 0) {
+            return;
+        }
+        const file = e.target.files[0];
+        html5QrCode.scanFile(file, true)
+        .then(qrCodeSuccessCallback)
+        .catch(err => setFeedback(`Error scanning file. Reason: ${err}`));
+    });
+    
+ // File based scanning
+    qrFile.addEventListener('change', e => {
+       // if (currentScanTypeSelection != SCAN_TYPE_FILE) return;
+        if (e.target.files.length == 0) {
+            return;
+        }
+        const file = e.target.files[0];
+        html5QrCode.clear();
+        html5QrCode.scanFile(file, true)
+        .then(qrCodeSuccessCallback)
+        .catch(err => setFeedback(`Error scanning file. Reason: ${err}`));
+    });
+    
+    
+	//alert('javascript ended');
+	alert('qrscanner loading');
+
+    qrscanner.addEventListener('click', async function() {
+    	
+    	 // Start scanning.
+    	 scanButton.addEventListener('click', () => {
+    	                if (currentScanTypeSelection != SCAN_TYPE_CAMERA) return;
+    	                const cameraId = cameraSelection.value;
+    	                cameraSelection.disabled = true;
+    	                scanButton.disabled = true;
+    	                // Start scanning.
+    	                html5QrCode.start(
+    	                    cameraId, 
+    	                    {
+    	                        fps: 10,
+    	                        qrbox: 250
+    	                    },
+    	                    qrCodeSuccessCallback,
+    	                    qrCodeErrorCallback)
+    	                    .then(_ => {
+    	                        stopButton.disabled = false;
+    	                        setStatus("scanning");
+    	                        setFeedback("");
+    	                    })
+    	                    .catch(error => {
+    	                        cameraSelection.disabled = false;
+    	                        scanButton.disabled = false;
+    	                        videoErrorCallback(error);
+    	                    });
+    	            });
+    	 
+    	 stopButton.addEventListener('click', function() {
+    	     stopButton.disabled = true;
+    	     html5QrCode.stop().then(ignore => {
+    	         cameraSelection.disabled = false;
+    	         scanButton.disabled = false;
+    	         setFeedback('Stopped');
+    	         setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+    	         scannedCodeContainer.innerHTML = "";
+    	         setPlaceholder();
+    	     }).catch(err => {
+    	         stopButton.disabled = false;
+    	         setFeedback('Error');
+    	         setFeedback("Race condition, unable to close the scan.");
+    	     });
+    	 });	
+    	 
+    	 closeNav.addEventListener('click', function() {
+             
+    		 stopscan = true;
+    		 /*stopButton.disabled = true;
+             html5QrCode.stop().then(ignore => {
+                 cameraSelection.disabled = false;
+                 scanButton.disabled = false;
+                 setFeedback('Stopped');
+                 setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+                 scannedCodeContainer.innerHTML = "";
+                 setPlaceholder();
+                 stopscan = true;
+                 document.getElementById("myNav").style.width = "0%";
+             }).catch(err => {
+                 stopButton.disabled = false;
+                 setFeedback('Error');
+                 setFeedback("Race condition, unable to close the scan.");
+             });*/
+         });
+    	
+    
+    //if (currentScanTypeSelection != SCAN_TYPE_CAMERA) return;
+    //requestPermissionButton.disabled = true;
+    //await sleep(2000);
+    
+   //alert('getting access to camera');
+   stopscan = false;
+   
+  myqr.style.width = "100%";
+  
+  //alert('set myqr style width 100%');
+
+    
+    const html5QrCode = new Html5Qrcode("qr", /* verbose= */ true);
+    Html5Qrcode.getCameras().then(cameras => {
+    	if (cameras.length == 0) {
+        	alert('Error: Zero cameras found in the device');
+            return;
+        }
+    	
+    	for (var i = 0; i < cameras.length; i++) {
+            const camera = cameras[i];
+            value = camera.id;
+            name = camera.label == null ? value : camera.label;
+        }
+    	cameraSelection.disabled = false;
+        scanButton.disabled = false;
+        cameraId = value;
+        //alert('cameraId1= ' + cameraId);
+        cameraSelection.disabled = true;
+        scanButton.disabled = true;
+        //alert('cameraId2= ' + cameraId);
+           html5QrCode.start(
+               cameraId, 
+               {
+                   fps: 10,
+                   qrbox: 250
+               },
+               qrCodeSuccessCallback,
+               qrCodeErrorCallback)
+               .then(_ => {
+                   stopButton.disabled = false;
+                   setStatus("scanning");
+                   setFeedback("");
+               })
+               .catch(error => {
+                   cameraSelection.disabled = false;
+                   scanButton.disabled = false;
+                   videoErrorCallback(error);
+               });
+        
+     
+    });
+    
+
+ 
+
+    
+    
+    while(!stopscan){
+    	await sleep(2000);
+    }
+    
+    stopButton.disabled = true;
+    html5QrCode.stop().then(ignore => {
+        cameraSelection.disabled = false;
+        scanButton.disabled = false;
+        setFeedback('Stopped');
+        setFeedback("Click 'Start Scanning' to <b>start scanning QR Code</b>");
+        scannedCodeContainer.innerHTML = "";
+        //setPlaceholder();
+        stopscan = true;
+    }).catch(err => {
+        stopButton.disabled = false;
+        setFeedback('Error');
+        setFeedback("Race condition, unable to close the scan.");
+    });
+
+  myqr.style.width = "0%";
+
+  //alert('set myqr style width 0%');
+
+    /*
+    Html5Qrcode.getCameras().then(cameras => {
+        //selectCameraContainer.innerHTML = `Select Camera (${cameras.length})`;
+        if (cameras.length == 0) {
+        	alert('Error: Zero cameras found in the device');
+            return;
+        }
+        
+        const camera;
+        const value;
+        const name;
+        
+        for (var i = 0; i < cameras.length; i++) {
+            camera = cameras[i];
+            value = camera.id;
+            name = camera.label == null ? value : camera.label;
+            alert('camera = ' + name);
+        }
+        const cameraId = value;
+        cameraSelection.disabled = true;
+        scanButton.disabled = true;
+        
+        html5QrCode.start(
+            cameraId, 
+            {
+               fps: 10,
+               qrbox: 250
+            },
+                qrCodeSuccessCallback,
+                qrCodeErrorCallback)
+                .then(_ => {
+                    //stopButton.disabled = false;
+                    //setStatus("scanning");
+                    //setFeedback("");
+                })
+                .catch(error => {
+                    //cameraSelection.disabled = false;
+                    //scanButton.disabled = false;
+                    //videoErrorCallback(error);
+                });
+    });*/
+    });
+/*    
+    Html5Qrcode.getCameras().then(cameras => {
+        //selectCameraContainer.innerHTML = `Select Camera (${cameras.length})`;
+        if (cameras.length == 0) {
+        	alert('Error: Zero cameras found in the device');
+            return;
+        }
+        
+        const camera;
+        const value;
+        const name;
+        
+        for (var i = 0; i < cameras.length; i++) {
+            camera = cameras[i];
+            value = camera.id;
+            name = camera.label == null ? value : camera.label;
+            alert('camera = ' + name);
+        }
+        const cameraId = value;
+        cameraSelection.disabled = true;
+        scanButton.disabled = true;
+        
+        html5QrCode.start(
+            cameraId, 
+            {
+               fps: 10,
+               qrbox: 250
+            },
+                qrCodeSuccessCallback,
+                qrCodeErrorCallback)
+                .then(_ => {
+                    //stopButton.disabled = false;
+                    //setStatus("scanning");
+                    //setFeedback("");
+                })
+                .catch(error => {
+                    //cameraSelection.disabled = false;
+                    //scanButton.disabled = false;
+                    //videoErrorCallback(error);
+                });
+        
+        //while(!stopscan){
+        	  //await sleep(2000);
+        //}        
+	});
+});    */
+});
+</script>
+</div>
+
+  <!--   <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script> -->
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>

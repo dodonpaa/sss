@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <meta name="description" content=""></meta>
+    <meta name="author" content=""></meta>
+  <link rel="shortcut icon" href="image/favicon1.ico"></link>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+
+    <title>Meeha Shop</title>
+    <meta name="description" content="Meeha Shop is an exotic shop for pets. We offer Pet costume, Pet clothes, Pet furniture, Pet utils at an affordable price."></meta>
+      <!-- iPad retina icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="components/patternfly/dist/img/apple-touch-icon-precomposed-152.png"></link>
+  <!-- iPad retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="components/patternfly/dist/img/apple-touch-icon-precomposed-144.png"></link>
+  <!-- iPad non-retina icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="components/patternfly/dist/img/apple-touch-icon-precomposed-76.png"></link>
+  <!-- iPad non-retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="components/patternfly/dist/img/apple-touch-icon-precomposed-72.png"></link>
+  <!-- iPhone 6 Plus icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="components/patternfly/dist/img/apple-touch-icon-precomposed-180.png"></link>
+  <!-- iPhone retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="components/patternfly/dist/img/apple-touch-icon-precomposed-114.png"></link>
+  <!-- iPhone non-retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="components/patternfly/dist/img/apple-touch-icon-precomposed-57.png"></link>
+   <link rel="stylesheet" href="assets/css/patternfly-adjusted.min.css"></link>
+  <link rel="stylesheet" href="components/patternfly/dist/css/patternfly-additions.min.css"></link>
+  <link rel="stylesheet" href="assets/css/patternfly-site.min.css"></link>
+   <link rel="stylesheet" href="assets/css/krubka.css"></link>
+   <link rel="stylesheet" href="assets/css/blog.css"></link>
+   		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+			<link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+			<link rel="stylesheet" type="text/css" href="assets/css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/checkout-cornerflat.css" />
+				<link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+				<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+				<link rel="stylesheet" type="text/css" href="assets/css/comments.css" />
+    
+    
+    
+    
+    
+    <!-- Bootstrap core CSS -->
+    <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"></link>
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/form-validation.css" rel="stylesheet"></link>
+    
+     <script src="components/jquery/dist/jquery.min.js"></script>
+  <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="components/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+  <script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+  <script src="components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+  <script src="components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+  <script src="components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+  <script src="components/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+ <script src="components/d3/d3.min.js"></script>
+ <script src="components/c3/c3.min.js"></script>
+  <script src="components/datatables/media/js/jquery.dataTables.js"></script>
+  <script src="components/google-code-prettify/bin/prettify.min.js"></script>
+    <script src="components/clipboard/dist/clipboard.min.js"></script>
+    <script src="components/patternfly/dist/js/patternfly.js"></script>
+  <script src="components/matchHeight/dist/jquery.matchHeight-min.js"></script>
+  <script src="assets/js/patternfly-site.min.js"></script>
+  <script src="assets/js/krubka.js"></script>
+  		<script src="assets/js/classie.js"></script>
+		  		<script src="assets/js/jquery.easyPaginate.js"></script>
+		<script src="assets/js/anime.min.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/star.js"></script>
+		<script src="http://www.patternfly.org/components/angular-patternfly/dist/docs/grunt-scripts/angular-patternfly.js"></script>
+  
+  <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
+     <script src="components/patternfly/src/js/patternfly.dataTables.pfEmpty.js"></script>
+	   <script src="components/patternfly/src/js/patternfly.dataTables.pfFilter.js"></script>
+  <script src="components/patternfly/src/js/patternfly.dataTables.pfPagination.js"></script>
+    <script src="components/patternfly/src/js/patternfly.dataTables.pfResize.js"></script>
+	<script src="components/patternfly/src/js/patternfly.dataTables.pfSelect.js"></script>
+  </head>
+
+  <body class="bg-light">
+  
+   <ul id="navigation">
+             <li class="home"><a href="http://localhost:8080/orders" title="Home"></a></li>
+				  <li class="about2"><a href="http://localhost:8080/checkout" title="Check out"></a></li> 
+				  	 <li class="search"><a href="http://localhost:8080/tracking" title="Product tracking"></a></li>
+					    <li class="promotion"><a href="http://localhost:8080/coupon" title="Promotion"></a></li>
+            <li class="howtobuy"><a href="http://localhost:8080/step" title="How to buy"></a></li>
+            <li class="about"><a href="http://localhost:8080/aboutus" title="About Us"></a></li>        
+        </ul>
+
+    <div class="container">
+    <div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						</ul>
+						
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">Meeha Policeman</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">41 reviews</span>
+						</div>
+						<p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+						<h4 class="price">current price: <span>$180</span></h4>
+						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+						<h5 class="sizes">sizes:
+							<span class="size" data-toggle="tooltip" title="small">s</span>
+							<span class="size" data-toggle="tooltip" title="medium">m</span>
+							<span class="size" data-toggle="tooltip" title="large">l</span>
+							<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+						</h5>
+						<h5 class="colors">colors:
+							<span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+							<span class="color green"></span>
+							<span class="color blue"></span>
+						</h5>
+						<div class="action">
+							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+							<!-- <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    <div class="well">
+    <div class="row">
+     <div class="col-md-12">
+    						<div class="widget-area no-padding blank">
+								<div class="status-upload">
+									<form>
+									   	<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<div class="cols-sm-10">
+								<div id="name_block" class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+							<br/><br/>
+									    <label>Comments</label>
+										<textarea id="comment" placeholder="What do you like about this product?" ></textarea>
+										<div id="stars-existing" class="starrr" data-rating='0'></div>
+										<button id="btn_submit" type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+									</form>
+								</div><!-- Status Upload  -->
+							</div><!-- Widget Area -->
+						</div>
+    </div>
+    </div>
+    <!--  
+    <div class="row lead">
+        <p>Also you can give a default rating by adding attribute data-rating</p>
+        <div id="stars-existing" class="starrr" data-rating='4'></div>
+        You gave a rating of <span id="count-existing">4</span> star(s)
+    </div>
+    </div>
+    -->
+    
+    <div class="well">
+      <div class="media">
+      	<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 1</h4>
+          <p class="text-right">By Francisco</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div>
+   <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div> 
+  <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div> 
+  <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div> 
+  <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div> 
+  <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div> 
+  <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div> 
+  <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div> 
+  <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150"/>
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div> 
+
+    </div>
+    <footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Email " />
+                                <button class="btn  bg-gray" type="button"> Lorem ipsum <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © Perfection Stationery 2017. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                	<li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/holder.min.js"></script>
+    <script src="js/classie.js"></script>
+		<script src="js/dynamics.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/main2.js"></script>
+     <script type="text/javascript">
+     /*<![CDATA[*/
+     $(document).ready(function () {
+	     alert('loaded!');	
+	     
+	     $('#btn_submit').on("click",function(e){
+	            e.preventDefault();
+	            alert('submit feedback!');
+	            var name = $("#name").val();
+	            var comment = $("#comment").val();
+	            var star = $("#stars-existing").find('.glyphicon-star').length;
+	            //var star = $('#star.glyphicon-star').length
+	            alert(name);
+	            alert(comment);
+	            alert(star);
+	            
+            	$('#name_block small').last().remove();
+            	$('#comment').attr("placeholder","What do you like about this product?");	            	
+            	
+	            if($.trim(name)===""){
+	            	$('#name_block').append('<small style="color:red;" class="text-muted">name is required.</small>');	            	
+	            }
+	            else if($.trim(comment)===""){
+	            	$('#comment').attr("placeholder","comment is required!");	            	
+	            }else{
+	            	 $.ajax({
+		                   type:"POST",
+		                   url:"/createreview",
+		                   data:{firstName:name,reviewText:comment,productId:1},
+		                   success:function (data) {
+		                	   alert('success');
+		                       if (confirm("Review with Id " +data + " Saved")){
+		                    	   window.location.reload();
+		                       }
+		                   }
+		                });
+	            }
+
+
+	        });
+	     
+	     
+	     $('#navigation a').click(function(){
+	        	alert("selected!");
+		  });
+	     
+    	 $('#navigation a').stop().animate({'marginLeft':'-85px'},1000);
+
+         $('#navigation > li').hover(
+             function () {
+                 $('a',$(this)).stop().animate({'marginLeft':'-2px'},200);
+             },
+             function () {
+                 $('a',$(this)).stop().animate({'marginLeft':'-85px'},200);
+             }
+         );
+     });
+     /*]]>*/
+    </script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>

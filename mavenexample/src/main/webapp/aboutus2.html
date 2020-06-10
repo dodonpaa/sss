@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-us" class="ie9 layout-pf layout-pf-fixed"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en-us" class="layout-pf layout-pf-fixed" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  <title>krubka.com - Property Consultant</title>
+  <meta name="description" content="krubka.com - Property consultant for international home buyers and investors"></meta>
+  <link rel="shortcut icon" href="image/favicon1.ico"></link>
+  <!-- iPad retina icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="components/patternfly/dist/img/apple-touch-icon-precomposed-152.png"></link>
+  <!-- iPad retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="components/patternfly/dist/img/apple-touch-icon-precomposed-144.png"></link>
+  <!-- iPad non-retina icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="components/patternfly/dist/img/apple-touch-icon-precomposed-76.png"></link>
+  <!-- iPad non-retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="components/patternfly/dist/img/apple-touch-icon-precomposed-72.png"></link>
+  <!-- iPhone 6 Plus icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="components/patternfly/dist/img/apple-touch-icon-precomposed-180.png"></link>
+  <!-- iPhone retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="components/patternfly/dist/img/apple-touch-icon-precomposed-114.png"></link>
+  <!-- iPhone non-retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="components/patternfly/dist/img/apple-touch-icon-precomposed-57.png"></link>
+  <link rel="stylesheet" href="assets/css/patternfly-adjusted.min.css"></link>
+  <link rel="stylesheet" href="components/patternfly/dist/css/patternfly-additions.min.css"></link>
+  <link rel="stylesheet" href="assets/css/patternfly-site.min.css"></link>
+  <link rel="stylesheet" href="assets/css/hybel.css"></link>
+   <link rel="stylesheet" href="assets/css/krubka.css"></link>
+   <link rel="stylesheet" href="assets/css/blog.css"></link>
+   		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+			<link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+			<link rel="stylesheet" type="text/css" href="assets/css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/checkout-cornerflat.css" />
+				<link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+				<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <!-- mobirise css start-->
+  <link rel="stylesheet" href="assets/css/mobirise2.css" />
+  <link rel="stylesheet" href="assets/css/mobirise-icons.css" />
+  <link rel="stylesheet" href="assets/css/tether.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap2.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap-reboot.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/style2.css" />
+  <link rel="stylesheet" href="assets/css/style3.css" />
+  <link rel="stylesheet" href="assets/css/mbr-additional.css" type="text/css" />
+  <!-- mobirise css end-->
+
+  <!-- form css -->
+  <link href="assets/css/test.css" rel="stylesheet" />
+  <!-- form css -->
+
+
+  <script src="assets/js/js.cookie.js"></script> 
+  <script src="components/jquery/dist/jquery.min.js"></script>
+  <!--  <script src="components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+  <script src="components/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+  <script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+  <script src="components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+  <script src="components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+  <script src="components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+  <script src="components/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+ <script src="components/d3/d3.min.js"></script>
+ <script src="components/c3/c3.min.js"></script>
+  <script src="components/datatables/media/js/jquery.dataTables.js"></script>
+  <script src="components/google-code-prettify/bin/prettify.min.js"></script>
+    <script src="components/clipboard/dist/clipboard.min.js"></script>
+    <script src="components/patternfly/dist/js/patternfly.js"></script>
+  <script src="components/matchHeight/dist/jquery.matchHeight-min.js"></script>
+  <script src="assets/js/patternfly-site.min.js"></script>
+  <script src="assets/js/krubka.js"></script>
+  		<script src="assets/js/classie.js"></script>
+		  		<script src="assets/js/jquery.easyPaginate.js"></script>
+		<script src="assets/js/anime.min.js"></script>
+		<script src="assets/js/main.js"></script>
+<!-- mobirise js start-->
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/tether.min.js"></script>
+  <script src="assets/js/bootstrap2.min.js"></script>
+  <script src="assets/js/jquery.touch-swipe.min.js"></script>
+  <script src="assets/js/jarallax.min.js"></script>
+  <script src="assets/js/smooth-scroll.js"></script>
+  <script src="assets/js/script.min.js"></script>
+  <script src="assets/js/script.js"></script>	
+<!-- mobirise js  end-->	
+
+  <!-- for table
+  -->
+    <script src="http://www.patternfly.org/components/angular-patternfly/dist/docs/grunt-scripts/angular-patternfly.js"></script>
+  
+  <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
+     <script src="components/patternfly/src/js/patternfly.dataTables.pfEmpty.js"></script>
+	   <script src="components/patternfly/src/js/patternfly.dataTables.pfFilter.js"></script>
+  <script src="components/patternfly/src/js/patternfly.dataTables.pfPagination.js"></script>
+    <script src="components/patternfly/src/js/patternfly.dataTables.pfResize.js"></script>
+	<script src="components/patternfly/src/js/patternfly.dataTables.pfSelect.js"></script>
+	<!-- for table-->
+</head>
+
+  <body class="cards-pf">
+      <!--  
+        <ul id="navigation">
+            <li class="home"><a href="http://localhost:8080/orders" title="Home"></a></li>
+				  <li class="about2"><a href="http://localhost:8080/checkout" title="Check out"></a></li> 
+				  	 <li class="search"><a href="http://localhost:8080/tracking" title="Product tracking"></a></li>
+					    <li class="promotion"><a href="http://localhost:8080/coupon" title="Promotion"></a></li>
+            <li class="howtobuy"><a href="http://localhost:8080/step" title="How to buy"></a></li>
+            <li class="about"><a href="http://localhost:8080/aboutus" title="About Us"></a></li>          
+        </ul>
+        -->
+  
+    <section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-0">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://krubka.com">
+                         <img src="images/icon3-1-122x124.png" alt="krubka.com" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://krubka.com">krubka.com</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://krubka.com">
+                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://krubka.com">
+                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        About Us
+                    </a>
+                </li>
+                <li class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://krubka.com"><span class="mobi-mbri mobi-mbri-phone mbr-iconfont mbr-iconfont-btn"></span>
+                    Call Agent</a></li>
+                </ul>
+            
+        </div>
+    </nav>
+</section>	
+		<section class="engine"></section>
+<section class="cid-qTkA127IK8 mbr-fullscreen mbr-parallax-background" id="header2-1">
+
+    
+
+    
+
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">LOOKING FOR PROPERTY ?</h1>
+                
+                <p class="mbr-text pb-3 mbr-fonts-style display-5">We understand how difficult it is to settle down in a new country. We help you to find the right property. Whether you are an expat, an investor or plan to build up a family. We find the right match for you. It is our goal to make the process simple, secure and effective. And, it's all free!&nbsp;</p>
+                <div class="mbr-section-btn"><a class="knappe2 btn btn-md btn-secondary display-4" href="#">REGISTER</a>
+                    <a class="knappe btn btn-md btn-white-outline display-4" href="#">SEARCH</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section>	
+<section class="features3 cid-r78fYq7Ydp mbr-parallax-background" id="features3-8">
+
+    
+
+    
+    <div class="container">
+        <div class="media-container-row">
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="images/fa01-676x507.jpg" alt="krubka.com" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">Apartment</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Explore unique view of the city of angel. Always catch up the next train to work. Reap full benefits of facilities. Make everyday a Friday. We have hundreads of projects for you to choose from</p>
+                    </div>
+                    <div class="mbr-section-btn text-center scroll_filter" data-filter="portfolio_category_17"><a href="#" class="btn btn-primary display-4">Explore</a></div>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="images/bg08-676x398.jpg" alt="krubka.com" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">Single Detached House</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Good environment to build a family. A long running track to stay in shape. Barbeque in the garden with the gang. Gardening on Sunday while your spouse cook favourite recipe for everyone to enjoy it together&nbsp;</p>
+                    </div>
+                    <div class="mbr-section-btn text-center scroll_filter2" data-filter="portfolio_category_17"><a href="#" class="btn btn-primary display-4">Explore</a></div>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="images/bg-676x289.jpg" alt="krubka.com" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">Semi Detached House</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">Twenty minutes ago you were in the office working on your important business plan. Now you enjoy reading the book and watching your favourite TV programme in the place called home</p>
+                    </div>
+                    <div class="mbr-section-btn text-center scroll_filter3" data-filter="portfolio_category_17"><a href="#" class="btn btn-primary display-4">Explore</a></div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>			
+  
+  
+  
+  
+<div class="container-fluid container-cards-pf container-pf-nav-pf-vertical">
+			<!--  <div class="container_inner default_template_holder clearfix page_container_inner"> -->
+			
+			
+		
+			
+			
+			
+			
+			
+			
+			
+	
+<!--  <div class="vc_row wpb_row section vc_row-fluid" style=" padding-top:-300px; text-align:left;"> -->
+																
+																
+																
+																
+																
+	<!--  <div class="container clearfix"> --><!--  															<div class=" full_section_inner clearfix"> -->
+	<!--  <div class="row"> -->
+	<!--  <div class="vc_col-sm-12 wpb_column vc_column_container"> -->
+		<!--  <div class="wpb_wrapper"> -->
+			<div class="projects_holder_outer v3 portfolio_with_space portfolio_standard ">
+				<div class="filter_outer">
+					<div class="filter_holder">
+						<ul>
+                        	<li id="all" class="filter active current" data-filter="all">
+                        		<span>All</span>
+                        	</li>
+                        	<li id="apartment" class="filter" data-filter="portfolio_category_17">
+                        		<span>Apartment</span>
+                        	</li>
+                        	<li id="detached" class="filter" data-filter="portfolio_category_2">
+                        		<span>Detached</span>
+                        	</li>
+                        	<li id="semidetached" class="filter" data-filter="portfolio_category_5">
+                        		<span>Semi-detached</span>
+                        	</li>
+                        </ul>
+                     </div>
+                </div>
+				<div style="width:50%;margin:auto;padding-top:1%;padding-bottom:5%;">
+									<div class="slinput">
+    									<i class="fa fa-search left-icon"></i> 
+    									<input  placeholder="Search here" /> 
+    									<i class="fa fa-close right-icon"></i>
+									</div>
+				</div>
+			</div>
+			<div class="container projects_holder" id="portfolio">
+		<!--  	<div class="row"> -->
+				<!--  <article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_2  mix_all">
+					<div class="product-grid">
+						<div class="product-image"> -->
+						<!-- image/set1/1.jpg -->
+						<!--  	<img src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg" class="pic-1" alt="property 1" />
+						</div>
+						<span class="text_holder">
+							<span class="text_outer">
+								<span class="text_inner">
+									<span class="feature_holder">
+										<span class="feature_holder_icons">
+											<a id="testremove" class="lightbox qbutton small white" title="Stockholm Fashion" href="#" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">remove</a>
+											<a id="testadd" class="preview qbutton small white" href="#" target="_self">add</a>
+										</span>
+									</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="portfolio_description ">
+						<h5 class="portfolio_title">
+							<a href="http://localhost/hybel" target="_self">Doctor Costume</a>
+						</h5>
+						<span class="project_category">Art</span>
+					</div> -->
+			<!--  	</article> -->
+				<article class="col-md-3 col-sm-6 mix costume portfolio_category_17 mix_all" style="display: inline-block; opacity: 1;">
+				<div class="image_holder">
+					<a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self">
+						<span class="image">
+							<img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" />
+						</span>
+					</a>
+					<span class="text_holder">
+						<span class="text_outer">
+							<span class="text_inner">
+								<span class="feature_holder">
+									<span class="feature_holder_icons">
+										<a id="viewproperty1" class="lightbox qbutton small white" title="Property1" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a>
+										<!--  <a id="testadd1" class="preview qbutton small white" href="#" target="_self">add</a> -->
+									</span>
+								</span>
+							</span>
+						</span>
+					</span>
+				</div>
+				<div class="portfolio_description ">
+					<h5 class="portfolio_title">
+						<a href="http://localhost/hybel" target="_self">Property 1</a>
+					</h5>
+					<span class="project_category">Condominium</span>
+				</div>
+			</article>
+				<article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty2" class="lightbox qbutton small white" title="Property2" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--  <a id="testadd1" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property2</a></h5><span class="project_category">Semi-detached</span></div></article>
+				<article class="col-md-3 col-sm-6 mix costume portfolio_category_17  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty3" class="lightbox qbutton small white" title="Property3" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--  <a id="testadd2" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property3</a></h5><span class="project_category">Detached</span></div></article>
+			  	<article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty4" class="lightbox qbutton small white" title="Property4" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--  <a id="testadd2" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property4</a></h5><span class="project_category">Apartment</span></div></article>
+			  
+			 <!-- </div>
+			  <div class="row"> -->
+			<!--  	<article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all">
+					<div class="product-grid">
+						<div class="product-image"> -->
+						<!-- image/set1/1.jpg -->
+				<!--  			<img src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg" class="pic-1" alt="property 1" />
+						</div>
+						<span class="text_holder">
+							<span class="text_outer">
+								<span class="text_inner">
+									<span class="feature_holder">
+										<span class="feature_holder_icons">
+											<a id="testremove" class="lightbox qbutton small white" title="Property5" href="#" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">remove</a>
+											<a id="testadd" class="preview qbutton small white" href="#" target="_self">add</a>
+										</span>
+									</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="portfolio_description ">
+						<h5 class="portfolio_title">
+							<a href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self">Doctor Costume</a>
+						</h5>
+						<span class="project_category">Business</span>
+					</div>
+				</article> -->
+				<article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty5" class="lightbox qbutton small white" title="Property6" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--<a id="testadd1" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property5</a></h5><span class="project_category">Apartment</span></div></article>
+				<article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty6" class="lightbox qbutton small white" title="Property7" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--<a id="testadd2" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property6</a></h5><span class="project_category">Apartment</span></div></article>
+			    <article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty7" class="lightbox qbutton small white" title="Property8" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--<a id="testadd2" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property7</a></h5><span class="project_category">Apartment</span></div></article>
+			    <article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty8" class="lightbox qbutton small white" title="Property9" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--<a id="testadd2" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property8</a></h5><span class="project_category">Apartment</span></div></article>
+			   <!--   </div> -->
+			<!--  <div class="projects_holder clearfix v3 standard" id="portfolio"> -->
+                <article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty9" class="lightbox qbutton small white" title="Property10" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--<a id="testadd2" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property9</a></h5><span class="project_category">Apartment</span></div></article>
+				<article class="col-md-3 col-sm-6 mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://localhost/hybel" target="_self"><span class="image"><img width="1100" height="825" src="img/fa04.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="viewproperty10" class="lightbox qbutton small white" title="Property11" href="http://localhost/hybel" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">view</a><!--<a id="testadd2" class="preview qbutton small white" href="#" target="_self">add</a>--></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://localhost/hybel" target="_self">Property10</a></h5><span class="project_category">Apartment</span></div></article>
+				
+				<div class="filler"></div>
+				<div class="filler"></div>
+				<div class="filler"></div>
+			</div>
+			<div class="portfolio_paging">
+				<span rel="2" class="load_more">
+					<a href="#" id="load">Show more</a>
+				</span>
+			</div>
+			<div class="portfolio_paging_loading">
+				<a href="javascript: void(0)" class="qbutton">Loading...</a>
+			</div>
+		<!--  </div> -->
+		<div class="separator  transparent center  " style="margin-top: 20px;margin-bottom: 20px;"></div>
+	<!--  </div> --> 
+	<!--  </div> --> 
+	<!--  </div> -->
+<!--  </div> -->
+<!--  </div> -->
+</div>
+
+<div class="container_inner">
+	<div class="row">
+	</div>
+</div>
+<!-- test form -->
+<div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+				    <h1>Agent Call Back</h1>
+						<div class="row main">
+				<div class="main-login main-center">
+				<h5>Please leave your information here</h5>
+					<form class="" method="post" action="#">
+						
+						<div class="form-group">
+							<!--<label for="name" class="cols-sm-2 control-label">Your Name</label>-->
+							<div class="cols-sm-10">
+								<div id="name_block" class="input-group">
+									<input type="text" class="form-control" name="name" id="name"  placeholder="firstname"/>
+								</div>
+							</div>
+						</div>
+						
+												<div class="form-group">
+							<!--<label for="name" class="cols-sm-2 control-label">Your Name</label>-->
+							<div class="cols-sm-10">
+								<div id="lastname_block" class="input-group">
+									<input type="text" class="form-control" name="lastname" id="lastname"  placeholder="lastname"/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<!--<label for="email" class="cols-sm-2 control-label">Your Email</label>-->
+							<div class="cols-sm-10">
+								<div id="email_block" class="input-group">
+									<input type="text" class="form-control" name="email" id="email"  placeholder="email"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<!--<label for="username" class="cols-sm-2 control-label">Username</label>-->
+							<div class="cols-sm-10">
+								<div id="phone_block" class="input-group">
+									<input type="text" class="form-control" name="phone" id="phone"  placeholder="phone"/>
+								</div>
+							</div>
+						</div>
+
+						
+
+						<div class="form-group ">
+							<a href="#" target="_blank" type="button" id="register_submit" class="btn btn-primary btn-lg btn-block login-button">Get in touch</a>
+						</div>
+						
+					</form>
+				</div>
+			</div>                 
+                  
+                </div>
+            </div>
+        </div>
+<!-- test form -->
+	  <div class="row row-cards-pf"><br /><br /></div>
+	 <div>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Address </h3>
+                    <ul>
+                        <li> <!--  <a href="#">--> 12/52 Ramkhamhaeng Rd <!--</a>--> </li>
+                        <li> <!--<a href="#">--> Saparnsueng Bangkok <!--</a>--> </li>
+                        <li> <!--<a href="#">--> 10120 <!--</a>--> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Contacts </h3>
+                    <ul>
+                        <li> <!-- <a href="#">--> Email: elfeemail@gmail.com <!--</a>--> </li>
+                        <li> <!-- <a href="#">--> Phone: +66(9)2 280 6856 <!--</a>--> </li>
+                        <li> <!--<a href="#">--> Line id: elfeeus <!--</a>--> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Tips </h3>
+                    <ul>
+                        <li> <a href="#"> FAQS </a> </li>
+                        <li> <a href="#"> Property Developers </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Get news </h3>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input id="email" type="text" class="full text-center" placeholder="Email " />
+                                <button id="btn_subscribe" class="btn  bg-gray" type="button"> Subscribe <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social" style="margin-left: 20%;">
+                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © krubka.com 2018. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                	<li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</div>
+    <div class="scroll-to-top">
+	<img src="images/scroll-to-top.png"></img>
+		<!-- <p>Scroll to top</p> *Use this as a text option, instead of the image icon.*-->
+		</div>
+
+<script>
+/*<![CDATA[*/
+  $(document).ready(function() { 
+	// automated scroll down arrow
+	$('.mbr-arrow').on('click', function(e) {
+            var $next = $(e.target).closest('section').next();
+            if($next.hasClass('engine')){
+                $next = $next.closest('section').next();
+            }
+            var offset = $next.offset();
+            $('html, body').stop().animate({
+                scrollTop: offset.top
+            }, 800, 'linear');
+    });
+	// scroll filter
+	$('.scroll_filter').on('click', function(e) {
+		    $('.filter.active').removeClass('active');
+		    $('#apartment').addClass('active');
+			var partnerResources = $(this).attr('data-filter');
+            
+            //alert(partnerResources);
+            $('#portfolio').find('article:not(.' + partnerResources + ')').css("display","none");
+            $('#portfolio').find('article.' + partnerResources).css("display","inline-block");
+		
+            var $next = $(e.target).closest('section').next();
+            if($next.hasClass('engine')){
+                $next = $next.closest('section').next();
+            }
+            var offset = $next.offset();
+            $('html, body').stop().animate({
+                scrollTop: offset.top
+            }, 800, 'linear');
+    });
+	// scroll filter
+	$('.scroll_filter2').on('click', function(e) {
+		    $('.filter.active').removeClass('active');
+		    $('#detached').addClass('active');
+			var partnerResources = $(this).attr('data-filter');
+            
+            //alert(partnerResources);
+            $('#portfolio').find('article:not(.' + partnerResources + ')').css("display","none");
+            $('#portfolio').find('article.' + partnerResources).css("display","inline-block");
+		
+            var $next = $(e.target).closest('section').next();
+            if($next.hasClass('engine')){
+                $next = $next.closest('section').next();
+            }
+            var offset = $next.offset();
+            $('html, body').stop().animate({
+                scrollTop: offset.top
+            }, 800, 'linear');
+    });
+	// scroll filter
+	$('.scroll_filter3').on('click', function(e) {
+		    $('.filter.active').removeClass('active');
+		    $('#semidetached').addClass('active');
+			var partnerResources = $(this).attr('data-filter');
+            
+            //alert(partnerResources);
+            $('#portfolio').find('article:not(.' + partnerResources + ')').css("display","none");
+            $('#portfolio').find('article.' + partnerResources).css("display","inline-block");
+		
+            var $next = $(e.target).closest('section').next();
+            if($next.hasClass('engine')){
+                $next = $next.closest('section').next();
+            }
+            var offset = $next.offset();
+            $('html, body').stop().animate({
+                scrollTop: offset.top
+            }, 800, 'linear');
+    });
+	
+	$('.knappe').on('click', function(e) {
+	    //$('.filter.active').removeClass('active');
+	    //$('#semidetached').addClass('active');
+		//var partnerResources = $(this).attr('data-filter');
+        
+        //alert(partnerResources);
+        //$('#portfolio').find('article:not(.' + partnerResources + ')').css("display","none");
+        //$('#portfolio').find('article.' + partnerResources).css("display","inline-block");
+	
+        var $next = $(e.target).closest('section').next();
+        if($next.hasClass('features3')){
+            $next = $next.closest('section').next();
+        }
+        var offset = $next.offset();
+        $('html, body').stop().animate({
+            scrollTop: offset.top
+        }, 800, 'linear');
+});
+	
+	$('.knappe2').on('click', function(e) {
+	    //$('.filter.active').removeClass('active');
+	    //$('#semidetached').addClass('active');
+		//var partnerResources = $(this).attr('data-filter');
+        
+        //alert(partnerResources);
+        //$('#portfolio').find('article:not(.' + partnerResources + ')').css("display","none");
+        //$('#portfolio').find('article.' + partnerResources).css("display","inline-block");
+	
+        var $next = $(e.target).closest('section').next();
+        if($next.hasClass('features3')){
+            $next = $next.closest('section').next().next();
+            //$next = $next.closest('section').next();
+        }
+        var offset = $next.offset();
+        $('html, body').stop().animate({
+            scrollTop: offset.top
+        }, 800, 'linear');
+});
+	
+    // matchHeight the contents of each .card-pf and then the .card-pf itself
+    $(".row-cards-pf > [class*='col'] > .card-pf .card-pf-title").matchHeight();
+    $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-body").matchHeight();
+    $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-footer").matchHeight();
+    $(".row-cards-pf > [class*='col'] > .card-pf").matchHeight();
+
+    // Initialize the vertical navigation
+    $().setupVerticalNavigation(true);
+	
+	 $('.filter span').click(function () {
+        var partnerResources = $(this).parent().attr('data-filter');
+        $('.filter.active').removeClass('active');
+        $(this).parent().addClass('active');
+        
+       // console.log('pr', partnerResources)
+
+        if (partnerResources == 'all') {
+            $('#portfolio').find('article:not(.' + partnerResources + ')').css("display","inline-block");
+            $('#portfolio').find('article.' + partnerResources).css("display","inline-block");
+        } else {
+            $('#portfolio').find('article:not(.' + partnerResources + ')').css("display","none");
+            $('#portfolio').find('article.' + partnerResources).css("display","inline-block");
+        }
+        return false;
+    });
+	
+	$(function(){
+      // if text box value is not null, then darken reset icon
+      $(".slinput input").keyup(function(){
+        var val = $(this).val();   
+        if(val.length > 0) {
+           $(this).parent().find(".right-icon").css('color','#555');
+        } else {
+          $(this).parent().find(".right-icon").css('color','#ccc');
+        }
+	
+	    if(val.length == 0){
+			$('#portfolio').find('article').css("display","inline-block");
+		}
+		
+		if (val == 'all' || val.length < 0) {
+            $('#portfolio').find('article:not(.' + val + ')').css("display","inline-block");
+            $('#portfolio').find('article.' + val).css("display","inline-block");
+        } else {
+            $('#portfolio').find('article:not(.' + val + ')').css("display","none");
+            $('#portfolio').find('article.' + val).css("display","inline-block");
+        }
+
+		
+		
+      });
+      
+      // if user click on reset icon, clear text field
+      $(".slinput .right-icon").click(function(){
+        $(this).parent().find("input").val('');
+        $(this).css('color','#ccc');
+      });
+	  
+	  // if user click on reset icon, clear text field
+      $(".slinput .left-icon").click(function(){
+	        var val = $(".slinput input").val();
+			 if (val == 'all') {
+            $('#portfolio').find('article:not(.' + val + ')').css("display","inline-block");
+            $('#portfolio').find('article.' + val).css("display","inline-block");
+        } else {
+            $('#portfolio').find('article:not(.' + val + ')').css("display","none");
+            $('#portfolio').find('article.' + val).css("display","inline-block");
+        }
+      });
+	  
+});
+	
+	
+  });
+  
+  $(function(){
+    //$("div").slice(0, 10).show(); // select the first ten
+    $("#load").click(function(e){ // click event for load more
+        e.preventDefault();
+        $("article:hidden").slice(0, 10).css("display","inline-block"); // select next 10 hidden divs and show them
+        if($("article:hidden").length == 0){ // check if any hidden divs still exist
+            //alert("No more articles"); // alert if there are none left
+        }
+    });
+});
+  /*]]>*/  
+</script>
+
+		<script src="js/classie.js"></script>
+		<script src="js/dynamics.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/main2.js"></script>
+		
+		<script>
+			(function() {
+				document.documentElement.className = 'js';
+				var slideshow = new CircleSlideshow(document.getElementById('slideshow'));
+			})();
+		</script>
+		
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( '.checkout' ) ).forEach( function( el ) {
+					var openCtrl = el.querySelector( '.checkout__button' ),
+						closeCtrls = el.querySelectorAll( '.checkout__cancel' ),
+					    doneCtrl = el.querySelector('.checkout__done');
+					
+					doneCtrl.addEventListener( 'click', function(ev) {
+						alert("click done!");
+						
+						
+						Cookies.set('product',JSON.stringify(window.products));
+						Cookies.set('productid',JSON.stringify(window.productids));
+						Cookies.set('price',JSON.stringify(window.price));
+												
+						ev.preventDefault();
+						window.location.href = "checkout.html";
+					} );
+					
+					openCtrl.addEventListener( 'click', function(ev) {
+						alert("click check out!");
+						ev.preventDefault();
+						classie.add( el, 'checkout--active' );
+					} );
+
+					[].slice.call( closeCtrls ).forEach( function( ctrl ) {
+						ctrl.addEventListener( 'click', function() {
+							classie.remove( el, 'checkout--active' );
+						} );
+					} );
+				} );
+			})();
+		</script>
+		
+		<script>            
+			jQuery(document).ready(function() {
+			
+			
+			
+			$('#easyPaginate').easyPaginate({
+			paginateElement: 'a',
+			elementsPerPage: 2,
+			effect: 'climb'
+		});
+			
+			
+			
+			
+				var offset = 200;
+				var duration = 500;
+				jQuery(window).scroll(function() {
+					if (jQuery(this).scrollTop() > offset) {
+						jQuery('.scroll-to-top').fadeIn(duration);
+					} else {
+						jQuery('.scroll-to-top').fadeOut(duration);
+					}
+				});
+				
+				jQuery('.scroll-to-top').click(function(event) {
+					event.preventDefault();
+					jQuery('html, body').animate({scrollTop: 0}, duration);
+					return false;
+				})
+			});
+	</script>
+	<script>
+		(function() {
+			[].slice.call(document.querySelectorAll('.grid--effect-rigel > .grid__item')).forEach(function(stackEl) {
+				new RigelFx(stackEl);
+			});
+		})();
+		</script>
+	 <script type="text/javascript">
+            $(function() {
+                $('#navigation a').stop().animate({'marginLeft':'-85px'},1000);
+
+                $('#navigation > li').hover(
+                    function () {
+                        $('a',$(this)).stop().animate({'marginLeft':'-2px'},200);
+                    },
+                    function () {
+                        $('a',$(this)).stop().animate({'marginLeft':'-85px'},200);
+                    }
+                );
+            });
+        </script>
+        <script type="text/javascript">
+    $(document).ready(function () {
+    	
+    	window.products = [];
+    	window.price = [];
+    	window.productids = [];
+    	
+    	 $('#blogmeeha').click(function(){
+         	alert("load blog");
+			window.location.href = "blog.html";
+ 	  });
+    	
+    	
+    	    	
+        $('#testadd').click(function(){
+        	alert("add meeha1 cookies");
+        	
+        	window.products.push('Doctor Costume');
+        	window.productids.push('1');
+        	window.price.push('100');
+        	
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=100;}
+        	else {window.cost = window.cost + 100;}
+        	alert(window.cost);
+        	
+        	$('#checkoutmeeha > tbody:last-child').append('<tr id="meeha01"><td>Doctor Costume <span>X 1</span></td><td>$100</td></tr>');
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+        	//								    <tr><th colspan="2">Total <span class="checkout__total">$0.0</span></th></tr>
+
+        });
+        
+        $('#testremove').click(function(){
+        	alert("remove meeha");
+        	
+        	var index = window.products.indexOf('Doctor Costume');
+        	if(index > -1){
+        		window.products.splice(index,1);
+        		window.productids.splice(index,1);
+        		window.price.splice(index,1);
+        	}
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=0;}
+
+        	$meeha01 = $('#meeha01');
+        	if (!jQuery.contains(document, $meeha01[0])) {
+        	    alert('not found');
+        	}else{
+        		if(typeof window.cost != 'undefined') {window.cost=window.cost-100;}
+        	}
+        	$('#meeha01').remove();
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+	  });
+        
+        $('#testadd1').click(function(){
+        	alert("add meeha");
+        	
+        	window.products.push('Sailor Costume');
+        	window.productids.push('2');
+        	window.price.push('100');
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=100;}
+        	else {window.cost = window.cost + 100;}
+        	alert(window.cost);
+
+        	
+        	$('#checkoutmeeha > tbody:last-child').append('<tr id="meeha02"><td>Sailor Costume <span>X 1</span></td><td>$100</td></tr>');
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+
+        });
+        
+        $('#testremove1').click(function(){
+        	alert("remove meeha");
+        	if(typeof window.cost == 'undefined') {window.cost=0;}
+        	
+        	var index = window.products.indexOf('Sailor Costume');
+        	if(index > -1){
+        		window.products.splice(index,1);
+        		window.productids.splice(index,1);
+        		window.price.splice(index,1);
+        	}
+
+        	
+        	$meeha02 = $('#meeha02');
+        	if (!jQuery.contains(document, $meeha02[0])) {
+        	    alert('not found');
+        	}else{
+        		if(typeof window.cost != 'undefined') {window.cost=window.cost-100;}
+        	}
+        	
+        	$('#meeha02').remove();
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+	  });
+        
+        $('#testadd2').click(function(){
+        	alert("add meeha");
+        	
+        	window.products.push('Pirate Costume');
+        	window.productids.push('3');
+        	window.price.push('100');
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=100;}
+        	else {window.cost = window.cost + 100;}
+        	alert(window.cost);
+        	
+        	$('#checkoutmeeha > tbody:last-child').append('<tr id="meeha03"><td>Pirate Costume <span>X 1</span></td><td>$100</td></tr>');
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');        
+        });
+        
+        $('#testremove2').click(function(){
+        	alert("remove meeha");
+        	
+        	var index = window.products.indexOf('Pirate Costume');
+        	if(index > -1){
+        		window.products.splice(index,1);
+        		window.productids.splice(index,1);
+        		window.price.splice(index,1);
+        	}
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=0;}
+        	
+        	$meeha03 = $('#meeha03');
+        	if (!jQuery.contains(document, $meeha03[0])) {
+        	    alert('not found');
+        	}else{
+        		if(typeof window.cost != 'undefined') {window.cost=window.cost-100;}
+        	}
+        	$('#meeha03').remove();
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+	  });
+    	
+        $('#btn_submit').on("click",function(e){
+            e.preventDefault();
+            var firstName = $("#customer_first_name").val();
+            var lastName = $("#customer_last_name").val();
+            if (!$(".checkbox :checkbox").is(":checked")){
+                alert("You must at least select one product");
+            }
+            else if($.trim(firstName)===""){
+                alert("You must fill the first name");
+            }
+            else if($.trim(lastName)===""){
+                alert("You must fill the last name");
+            }
+            else{
+                var productIds = [];
+                $(".checkbox :checkbox:checked").each(function(){
+                   productIds.push(parseInt($(this).attr("id")));
+                });
+                $.ajax({
+                   type:"POST",
+                   url:"/createorder",
+                   data:{firstName:firstName,lastName:lastName, productIds:productIds},
+                   success:function (data) {
+                       if (confirm("Order with Id " +data + " Saved")){
+                           window.location.reload();
+                       }
+                   }
+                });
+            }
+        });
+
+        $('#register_submit').on("click",function(e){
+            e.preventDefault();
+            //alert('signup!');
+            var name = $("#name").val();
+            var lastname = $("#lastname").val();
+            var email = $("#email").val();
+            var phone = $("#phone").val();
+            //var comment = $("#comment").val();
+            //var star = $("#stars-existing").find('.glyphicon-star').length;
+            //var star = $('#star.glyphicon-star').length
+            //alert(name);
+            //alert(lastname);
+            //alert(email);
+            //alert(phone);
+            
+        	$('#name_block small').last().remove();
+        	$('#lastname_block small').last().remove();
+        	$('#email_block small').last().remove();
+        	$('#phone_block small').last().remove();
+        	
+        	//$('#comment').attr("placeholder","What do you like about this product?");	            	
+        	//alert("ajax post");
+            if($.trim(name)===""){
+            	$('#name_block').append('<small style="color:red;" class="text-muted">name is required.</small>');	            	
+            }else if($.trim(lastname)===""){
+            	$('#lastname_block').append('<small style="color:red;" class="text-muted">lastname is required.</small>');	            	
+            }else if($.trim(email)===""){
+            	$('#email_block').append('<small style="color:red;" class="text-muted">email is required.</small>');	            	
+            }else if($.trim(phone)===""){
+            	$('#phone_block').append('<small style="color:red;" class="text-muted">phone is required.</small>');	            	
+            }else{
+            	//alert("ajax posted");
+            	lastname = lastname + "_callback";
+            	 $.ajax({
+	                   type:"POST",
+	                   url:"/createsignup",
+	                   data:{firstName:name,lastName:lastname,email:email,phone:phone},
+	                   success:function (data) {
+	                	   //alert('success');
+	                       //if (confirm("Signup with Id " +data + " Saved")){
+	                    	   window.location.reload();
+	                       //}
+	                   }
+	                });
+            }
+
+
+        });
+        
+        $('#btn_subscribe').on("click",function(e){
+            e.preventDefault();
+            //alert('signup!');
+            var name = "subscriber";
+            var lastname = "subscriber";
+            var phone = "5555555";
+            //var name = $("#name").val();
+            //var lastname = $("#lastname").val();
+            var email = $("#email").val();
+            //var phone = $("#phone").val();
+            //var comment = $("#comment").val();
+            //var star = $("#stars-existing").find('.glyphicon-star').length;
+            //var star = $('#star.glyphicon-star').length
+            //alert(name);
+            //alert(lastname);
+            //alert(email);
+            //alert(phone);
+            
+        	//$('#name_block small').last().remove();
+        	//$('#lastname_block small').last().remove();
+        	//$('#email_block small').last().remove();
+        	//$('#phone_block small').last().remove();
+        	
+        	//$('#comment').attr("placeholder","What do you like about this product?");	            	
+        	//alert("ajax post");
+            //if($.trim(name)===""){
+            	//$('#name_block').append('<small style="color:red;" class="text-muted">name is required.</small>');	            	
+            //}else if($.trim(lastname)===""){
+            	//$('#lastname_block').append('<small style="color:red;" class="text-muted">lastname is required.</small>');	            	
+            //}else 
+             if($.trim(email)===""){
+            	//$('#email_block').append('<small style="color:red;" class="text-muted">email is required.</small>');	            	
+            }//else if($.trim(phone)===""){
+            	//$('#phone_block').append('<small style="color:red;" class="text-muted">phone is required.</small>');	            	
+            //}
+            else{
+            	//alert("ajax posted");
+            	 $.ajax({
+	                   type:"POST",
+	                   url:"/createsignup",
+	                   data:{firstName:name,lastName:lastname,email:email,phone:phone},
+	                   success:function (data) {
+	                	   //alert('success');
+	                       //if (confirm("Signup with Id " +data + " Saved")){
+	                    	   window.location.reload();
+	                       //}
+	                   }
+	                });
+            }
+
+
+        });
+        
+        
+        
+        //Complete order button handler
+
+        $('.delete-order').on("click", function(e){
+            e.preventDefault();
+
+            if(confirm("Are you sure the order is complete?")){
+                var Id = parseInt($(this).closest("td").attr("id"));
+
+                $.ajax({
+                    type:"POST",
+                    url:"/removeorder",
+                    data:{Id:Id},
+                    success:function (data) {
+                        $(".delete-order").closest("td#"+data).parent("tr").fadeOut("slow",function(){
+                            $(".delete-order").closest("td#"+data).parent("tr").remove();
+                        });
+                    }
+                });
+            }
+
+        });
+
+    });
+</script>
+        
+        
+  </body>
+</html>

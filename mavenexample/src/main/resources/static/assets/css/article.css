@@ -1,0 +1,12 @@
+.icon-left{
+    float:left;
+    padding: 0px 25px 30px 15px;
+    color:#4ECABE;
+}
+.text{
+    text-align:left;
+    padding:0 0 0 15px;
+}
+.text h4{
+    padding-bottom:5px;
+}

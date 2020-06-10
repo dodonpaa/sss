@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-us" class="ie9 layout-pf layout-pf-fixed"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en-us" class="layout-pf layout-pf-fixed" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+  <head>
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  <title>Meeha Shop - Pet Accessories and clothes</title>
+  <meta name="description" content="Meeha Shop is an exotic shop for pets. We offer Pet costume, Pet clothes, Pet furniture, Pet utils at an affordable price."></meta>
+  <link rel="shortcut icon" href="image/favicon1.ico"></link>
+  <!-- iPad retina icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="components/patternfly/dist/img/apple-touch-icon-precomposed-152.png"></link>
+  <!-- iPad retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="components/patternfly/dist/img/apple-touch-icon-precomposed-144.png"></link>
+  <!-- iPad non-retina icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="components/patternfly/dist/img/apple-touch-icon-precomposed-76.png"></link>
+  <!-- iPad non-retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="components/patternfly/dist/img/apple-touch-icon-precomposed-72.png"></link>
+  <!-- iPhone 6 Plus icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="components/patternfly/dist/img/apple-touch-icon-precomposed-180.png"></link>
+  <!-- iPhone retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="components/patternfly/dist/img/apple-touch-icon-precomposed-114.png"></link>
+  <!-- iPhone non-retina icon (iOS < 7) -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="components/patternfly/dist/img/apple-touch-icon-precomposed-57.png"></link>
+  <link rel="stylesheet" href="assets/css/patternfly-adjusted.min.css"></link>
+  <link rel="stylesheet" href="components/patternfly/dist/css/patternfly-additions.min.css"></link>
+  <link rel="stylesheet" href="assets/css/patternfly-site.min.css"></link>
+   <link rel="stylesheet" href="assets/css/krubka.css"></link>
+   <link rel="stylesheet" href="assets/css/blog.css"></link>
+   		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+			<link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+			<link rel="stylesheet" type="text/css" href="assets/css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/checkout-cornerflat.css" />
+				<link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+				<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+  <script src="assets/js/js.cookie.js"></script> 
+  <script src="components/jquery/dist/jquery.min.js"></script>
+  <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="components/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+  <script src="components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+  <script src="components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+  <script src="components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+  <script src="components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+  <script src="components/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+ <script src="components/d3/d3.min.js"></script>
+ <script src="components/c3/c3.min.js"></script>
+  <script src="components/datatables/media/js/jquery.dataTables.js"></script>
+  <script src="components/google-code-prettify/bin/prettify.min.js"></script>
+    <script src="components/clipboard/dist/clipboard.min.js"></script>
+    <script src="components/patternfly/dist/js/patternfly.js"></script>
+  <script src="components/matchHeight/dist/jquery.matchHeight-min.js"></script>
+  <script src="assets/js/patternfly-site.min.js"></script>
+  <script src="assets/js/krubka.js"></script>
+  		<script src="assets/js/classie.js"></script>
+		  		<script src="assets/js/jquery.easyPaginate.js"></script>
+		<script src="assets/js/anime.min.js"></script>
+		<script src="assets/js/main.js"></script>
+		
+
+  <!-- for table
+  -->
+    <script src="http://www.patternfly.org/components/angular-patternfly/dist/docs/grunt-scripts/angular-patternfly.js"></script>
+  
+  <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
+     <script src="components/patternfly/src/js/patternfly.dataTables.pfEmpty.js"></script>
+	   <script src="components/patternfly/src/js/patternfly.dataTables.pfFilter.js"></script>
+  <script src="components/patternfly/src/js/patternfly.dataTables.pfPagination.js"></script>
+    <script src="components/patternfly/src/js/patternfly.dataTables.pfResize.js"></script>
+	<script src="components/patternfly/src/js/patternfly.dataTables.pfSelect.js"></script>
+	<!-- for table-->
+</head>
+
+  <body class="cards-pf">
+      
+        <ul id="navigation">
+            <li class="home"><a href="http://localhost:8080/orders" title="Home"></a></li>
+				  <li class="about2"><a href="http://localhost:8080/checkout" title="Check out"></a></li> 
+				  	 <li class="search"><a href="http://localhost:8080/tracking" title="Product tracking"></a></li>
+					    <li class="promotion"><a href="http://localhost:8080/coupon" title="Promotion"></a></li>
+            <li class="howtobuy"><a href="http://localhost:8080/step" title="How to buy"></a></li>
+            <li class="about"><a href="http://localhost:8080/aboutus" title="About Us"></a></li>          
+        </ul>
+  
+  
+  
+  
+<div class="container-fluid container-cards-pf container-pf-nav-pf-vertical">
+	<div class="container_inner">
+			<div class="deco deco--title"></div>
+			<div id="slideshow" class="slideshow">
+				<div class="slide">
+					<h2 class="slide__title slide__title--preview">Macadamia Skin Oil <span class="slide__price">$39</span></h2>
+					<div class="slide__item">
+						<div class="slide__inner">
+							<img class="slide__img slide__img--small" src="img/small/1.png" alt="Some image" />
+							<button class="action action--open" aria-label="View details"><i class="fa fa-plus"></i></button>
+						</div>
+					</div>
+					<div class="slide__content">
+						<div class="slide__content-scroller">
+							<img class="slide__img slide__img--large" src="img/1.png" alt="Some image" />
+							<div class="slide__details">
+								<h2 class="slide__title slide__title--main">Macadamia Skin Oil</h2>
+								<p class="slide__description">Hydration for very dry skin</p>
+								<div>
+									<span class="slide__price slide__price--large">$39</span>
+									<button class="button button--buy">Add to cart</button>
+								</div>
+							</div><!-- /slide__details -->
+						</div><!-- slide__content-scroller -->
+					</div><!-- slide__content -->
+				</div>
+				<div class="slide">
+					<h2 class="slide__title slide__title--preview">Grapeseed Skin Oil <span class="slide__price">$19</span></h2>
+					<div class="slide__item">
+						<div class="slide__inner">
+							<img class="slide__img slide__img--small" src="img/small/2.png" alt="Some image" />
+							<button class="action action--open" aria-label="View details"><i class="fa fa-plus"></i></button>
+						</div>
+					</div>
+					<div class="slide__content">
+						<div class="slide__content-scroller">
+							<img class="slide__img slide__img--large" src="img/2.png" alt="Some image" />
+							<div class="slide__details">
+								<h2 class="slide__title slide__title--main">Grapeseed Skin Oil</h2>
+								<p class="slide__description">Moisture control for all skin types</p>
+								<div>
+									<span class="slide__price slide__price--large">$19</span>
+									<button class="button button--buy">Add to cart</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide">
+					<h2 class="slide__title slide__title--preview">Jojoba Skin Oil <span class="slide__price">$35</span></h2>
+					<div class="slide__item">
+						<div class="slide__inner">
+							<img class="slide__img slide__img--small" src="img/small/3.png" alt="Some image" />
+							<button class="action action--open" aria-label="View details"><i class="fa fa-plus"></i></button>
+						</div>
+					</div>
+					<div class="slide__content">
+						<div class="slide__content-scroller">
+							<img class="slide__img slide__img--large" src="img/3.png" alt="Some image" />
+							<div class="slide__details">
+								<h2 class="slide__title slide__title--main">Jojoba Skin Oil</h2>
+								<p class="slide__description">Protection for sensitive skin</p>
+								<div>
+									<span class="slide__price slide__price--large">$35</span>
+									<button class="button button--buy">Add to cart</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide">
+					<h2 class="slide__title slide__title--preview">Amaranth Skin Oil <span class="slide__price">$29</span></h2>
+					<div class="slide__item">
+						<div class="slide__inner">
+							<img class="slide__img slide__img--small" src="img/small/4.png" alt="Some image" />
+							<button class="action action--open" aria-label="View details"><i class="fa fa-plus"></i></button>
+						</div>
+					</div>
+					<div class="slide__content">
+						<div class="slide__content-scroller">
+							<img class="slide__img slide__img--large" src="img/4.png" alt="Some image" />
+							<div class="slide__details">
+								<h2 class="slide__title slide__title--main">Amaranth Skin Oil</h2>
+								<p class="slide__description">Rich hydration for mature skin</p>
+								<div>
+									<span class="slide__price slide__price--large">$29</span>
+									<button class="button button--buy">Add to cart</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide">
+					<h2 class="slide__title slide__title--preview">Argan Skin Oil <span class="slide__price">$59</span></h2>
+					<div class="slide__item">
+						<div class="slide__inner">
+							<img class="slide__img slide__img--small" src="img/small/5.png" alt="Some image" />
+							<button class="action action--open" aria-label="View details"><i class="fa fa-plus"></i></button>
+						</div>
+					</div>
+					<div class="slide__content">
+						<div class="slide__content-scroller">
+							<img class="slide__img slide__img--large" src="img/5.png" alt="Some image" />
+							<div class="slide__details">
+								<h2 class="slide__title slide__title--main">Argan Skin Oil</h2>
+								<p class="slide__description">Moisture for problematic &amp; dry skin</p>
+								<div>
+									<span class="slide__price slide__price--large">$59</span>
+									<button class="button button--buy">Add to cart</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide">
+					<h2 class="slide__title slide__title--preview">Avocado Skin Oil <span class="slide__price">$39</span></h2>
+					<div class="slide__item">
+						<div class="slide__inner">
+							<img class="slide__img slide__img--small" src="img/small/6.png" alt="Some image" />
+							<button class="action action--open" aria-label="View details"><i class="fa fa-plus"></i></button>
+						</div>
+					</div>
+					<div class="slide__content">
+						<div class="slide__content-scroller">
+							<img class="slide__img slide__img--large" src="img/6.png" alt="Some image" />
+							<div class="slide__details">
+								<h2 class="slide__title slide__title--main">Avocado Skin Oil</h2>
+								<p class="slide__description">Deep repair for stressed skin</p>
+								<div>
+									<span class="slide__price slide__price--large">$39</span>
+									<button class="button button--buy">Add to cart</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="action action--close" aria-label="Close"><i class="fa fa-close"></i></button>
+			</div>
+		</div><!-- /container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="container_inner default_template_holder clearfix page_container_inner">
+			<div class="checkout">
+						<a class="checkout__button" href="#"><!-- Fallback location -->
+							<span class="checkout__text">
+								<svg class="checkout__icon" width="30px" height="30px" viewBox="0 0 35 35">
+									<path fill="#fff" d="M33.623,8.004c-0.185-0.268-0.486-0.434-0.812-0.447L12.573,6.685c-0.581-0.025-1.066,0.423-1.091,1.001 c-0.025,0.578,0.423,1.065,1.001,1.091L31.35,9.589l-3.709,11.575H11.131L8.149,4.924c-0.065-0.355-0.31-0.652-0.646-0.785 L2.618,2.22C2.079,2.01,1.472,2.274,1.26,2.812s0.053,1.146 0.591,1.357l4.343,1.706L9.23,22.4c0.092,0.497,0.524,0.857,1.03,0.857 h0.504l-1.15,3.193c-0.096,0.268-0.057,0.565,0.108,0.798c0.163,0.232,0.429,0.37,0.713,0.37h0.807 c-0.5,0.556-0.807,1.288-0.807,2.093c0,1.732,1.409,3.141,3.14,3.141c1.732,0,3.141-1.408,3.141-3.141c0-0.805-0.307-1.537-0.807-2.093h6.847c-0.5,0.556-0.806,1.288-0.806,2.093c0,1.732,1.407,3.141,3.14,3.141 c1.731,0,3.14-1.408,3.14-3.141c0-0.805-0.307-1.537-0.806-2.093h0.98c0.482,0,0.872-0.391,0.872-0.872s-0.39-0.873-0.872-0.873 H11.675l0.942-2.617h15.786c0.455,0,0.857-0.294,0.996-0.727l4.362-13.608C33.862,8.612,33.811,8.272,33.623,8.004z M13.574,31.108c-0.769,0-1.395-0.626-1.395-1.396s0.626-1.396,1.395-1.396c0.77,0,1.396,0.626,1.396,1.396S14.344,31.108,13.574,31.108z M25.089,31.108c-0.771,0-1.396 0.626-1.396-1.396s0.626-1.396,1.396-1.396c0.77,0,1.396,0.626,1.396,1.396 S25.858,31.108,25.089,31.108z"/>
+								</svg>
+							</span>
+						</a>
+						<div class="checkout__order">
+							<div class="checkout__order-inner">
+								<table id="checkoutmeeha" class="checkout__summary">
+									<thead>
+								        <tr><th>Your Order</th><th>Price</th></tr>
+								    </thead>
+								    <tfoot>
+								    <tr><th colspan="2">Total <span class="checkout__total">$0.0</span></th></tr>
+								    </tfoot>
+								    <tbody>
+										<!--  <tr><td>Imitations <span>Mark Lanegan</span></td><td>$9.90</td></tr>
+										<tr><td>In The Silence <span>Ásgeir</span></td><td>$5.50</td></tr>
+										<tr><td>Out Of Exile <span>Audioslave</span></td><td>$11.00</td></tr>
+										<tr><td>London <span>Frank Sinatra</span></td><td>$19.90</td></tr>
+										<tr><td>Cure For Pain <span>Morphine</span></td><td>$9.90</td></tr> -->
+									</tbody>
+								</table><!-- /checkout__summary -->
+								<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Continue Shopping</button><button class="checkout__option checkout__done">Buy</button>
+								<button class="checkout__close checkout__cancel"><i class="icon fa fa-fw fa-close"></i>Close</button>
+							</div><!-- /checkout__order-inner -->
+						</div><!-- /checkout__order -->
+					</div><!-- /checkout -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+																<div class="vc_row wpb_row section vc_row-fluid" style=" padding-top:-300px; text-align:left;">
+																
+																
+																
+																
+																
+																<div class=" full_section_inner clearfix">
+	<div class="vc_col-sm-12 wpb_column vc_column_container">
+		<div class="wpb_wrapper">
+			<div class="projects_holder_outer v3 portfolio_with_space portfolio_standard "><div class="filter_outer"><div class="filter_holder">
+							<ul>
+                            <li class="filter active current" data-filter="all"><span>All</span></li><li class="filter" data-filter="portfolio_category_17"><span>Art</span></li><li class="filter" data-filter="portfolio_category_2"><span>Business</span></li><li class="filter" data-filter="portfolio_category_5"><span>Photography</span></li></ul></div></div>
+							<div style="width:50%;margin:auto;padding-top:1%;padding-bottom:5%;">
+									<div class="slinput">
+    <i class="fa fa-search left-icon"></i> 
+    <input  placeholder="Search here" /> 
+    <i class="fa fa-close right-icon"></i>
+</div>
+</div>
+							
+							
+							
+							
+<div class="projects_holder clearfix v3 standard" id="portfolio">
+<article class="mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="testremove" class="lightbox qbutton small white" title="Stockholm Fashion" href="#" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">remove</a><a id="testadd" class="preview qbutton small white" href="#" target="_self">add</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self">Doctor Costume</a></h5><span class="project_category">100 ฿</span></div></article>
+<article class="mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/5.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="testremove1" class="lightbox qbutton small white" title="Stockholm Fashion" href="#" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">remove</a><a id="testadd1" class="preview qbutton small white" href="#" target="_self">add</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self">Sailor Costume</a></h5><span class="project_category">100 ฿</span></div></article>
+<article class="mix costume portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/4.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a id="testremove2" class="lightbox qbutton small white" title="Stockholm Fashion" href="#" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">remove</a><a id="testadd2" class="preview qbutton small white" href="#" target="_self">add</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/stockholm-fashion-destination/" target="_self">Pirate Costume</a></h5><span class="project_category">100 ฿</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_2  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/berlin-design-week-poster/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Berlin Design Week" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-design-of-total-mechanics-berlin-design-week-poster.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/berlin-design-week-poster/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/berlin-design-week-poster/" target="_self">Berlin Design Week</a></h5><span class="project_category">Art, Business</span></div></article>
+<article class="mix portfolio_category_2  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/venice-art-pavilion/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Venice Art Pavilion" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-stv-music-awards-2013-venice-art-pavilion.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/venice-art-pavilion/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/venice-art-pavilion/" target="_self">Venice Art Pavilion</a></h5><span class="project_category">Business</span></div></article>
+<article class="mix portfolio_category_2  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/vimeo-fx-showreel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Vimeo FX Showreel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-vimeo-fx-showreel-abstract-style-of-handler.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/vimeo-fx-showreel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/vimeo-fx-showreel/" target="_self">Vimeo FX Showreel</a></h5><span class="project_category">Business</span></div></article>
+<article class="mix portfolio_category_2 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/der-spiegel-cover-art/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Der Spiegel Cover Art" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-der-spiegel-cover-art-luv-deluxe-3000.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/der-spiegel-cover-art/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/der-spiegel-cover-art/" target="_self">Der Spiegel Cover Art</a></h5><span class="project_category">Business, Photography</span></div></article>
+<article class="mix portfolio_category_2 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/video-performance-festival-2014/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Festival 2014" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-video-performance-festival-2014-mother-volcano-artwork.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/video-performance-festival-2014/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/video-performance-festival-2014/" target="_self">Festival 2014</a></h5><span class="project_category">Business, Photography</span></div></article>
+<article class="mix portfolio_category_2  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/smash-pop-art-storm/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Smash Pop Art Storm" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-smash-pop-art-storm-superdollz-showroom.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/smash-pop-art-storm/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/smash-pop-art-storm/" target="_self">Smash Pop Art Storm</a></h5><span class="project_category">Business</span></div></article>
+<article class="mix portfolio_category_2  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/adventures-in-zonderland/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Adventures in Zonderland" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-adventures-in-zonderland-67b-construction-studio.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/adventures-in-zonderland/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/adventures-in-zonderland/" target="_self">Adventures in Zonderland</a></h5><span class="project_category">Business</span></div></article>
+<article class="mix portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/stv-music-awards-2013/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="STV Music Awards 2013" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-stv-music-awards-2013-venice-art-pavilion.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/stv-music-awards-2013/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/stv-music-awards-2013/" target="_self">STV Music Awards 2013</a></h5><span class="project_category">Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: inline-block; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<article class="mix portfolio_category_17 portfolio_category_5  mix_all" style="display: none; opacity: 1;"><div class="image_holder"><a class="portfolio_link_for_touch" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self"><span class="image"><img width="1100" height="825" src="image/set1/1.jpg" class="attachment-full wp-post-image" alt="qode interactive strata" /></span></a><span class="text_holder"><span class="text_outer"><span class="text_inner"><span class="feature_holder"><span class="feature_holder_icons"><a class="lightbox qbutton small white" title="Pale Skin Apparel" href="http://demo.qodeinteractive.com/bridge/wp-content/uploads/2013/10/p-pale-skin-apparel-fast-vector-mobile.jpg" data-rel="prettyPhoto[pretty_photo_gallery]" rel="prettyPhoto[pretty_photo_gallery]">zoom</a><a class="preview qbutton small white" href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">shop</a></span></span></span></span></span></div><div class="portfolio_description "><h5 class="portfolio_title"><a href="http://demo.qodeinteractive.com/bridge/portfolio_page/pale-skin-apparel/" target="_self">Pale Skin Apparel</a></h5><span class="project_category">Art, Photography</span></div></article>
+<div class="filler"></div>
+<div class="filler"></div>
+<div class="filler"></div>
+</div><div class="portfolio_paging"><span rel="2" class="load_more"><a href="#" id="load">Show more</a></span></div><div class="portfolio_paging_loading"><a href="javascript: void(0)" class="qbutton">Loading...</a></div></div><div class="separator  transparent center  " style="margin-top: 20px;margin-bottom: 20px;"></div>
+
+		</div> 
+	</div> </div>
+</div>
+</div>
+</div>
+
+<div class="container_inner">
+	<div class="row">
+		<div class="well">
+        <h1 class="text-center">Reviews</h1>
+        <div class="list-group" id="easyPaginate">
+          <a href="#" class="list-group-item active">
+                <div class="media col-md-3">
+                    <figure class="pull-left">
+                        <img class="media-object img-rounded img-responsive"  src="http://placehold.it/350x250" alt="placehold.it/350x250" />
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="list-group-item-heading"> List group heading </h4>
+                    <p class="list-group-item-text"> Qui diam libris ei, vidisse incorrupte at mel. His euismod salutandi dissentiunt eu. Habeo offendit ea mea. Nostro blandit sea ea, viris timeam molestiae an has. At nisl platonem eum. 
+                        Vel et nonumy gubergren, ad has tota facilis probatus. Ea legere legimus tibique cum, sale tantas vim ea, eu vivendo expetendis vim. Voluptua vituperatoribus et mel, ius no elitr deserunt mediocrem. Mea facilisi torquatos ad.
+                    </p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h2> 14240 <small> votes </small></h2>
+                    <button id="blogmeeha" type="button" class="btn btn-default btn-lg btn-block review__done"> Vote Now! </button>
+                    <div class="stars">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    </div>
+                    <p> Average 4.5 <small> / </small> 5 </p>
+                </div>
+          </a>
+          <a href="#" class="list-group-item">
+                <div class="media col-md-3">
+                    <figure class="pull-left">
+                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250" />
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="list-group-item-heading"> List group heading </h4>
+                    <p class="list-group-item-text"> Eu eum corpora torquatos, ne postea constituto mea, quo tale lorem facer no. Ut sed odio appetere partiendo, quo meliore salutandi ex. Vix an sanctus vivendo, sed vocibus accumsan petentium ea. 
+                        Sed integre saperet at, no nec debet erant, quo dico incorrupte comprehensam ut. Et minimum consulatu ius, an dolores iracundia est, oportere vituperata interpretaris sea an. Sed id error quando indoctum, mel suas saperet at.                         
+                    </p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h2> 12424 <small> votes </small></h2>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Vote Now!</button>
+                    <div class="stars">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    </div>
+                    <p> Average 3.9 <small> / </small> 5 </p>
+                </div>
+          </a>
+          <a href="#" class="list-group-item">
+                <div class="media col-md-3">
+                    <figure class="pull-left">
+                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250" />
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="list-group-item-heading"> List group heading </h4>
+                    <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id, nam quot populo ea. 
+                        Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem iudicabit cu. At usu vocibus officiis, ad ius eros tibique appellantur.                         
+                    </p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h2> 13540 <small> votes </small></h2>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Vote Now!</button>
+                    <div class="stars">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    </div>
+                    <p> Average 4.1 <small> / </small> 5 </p>
+                </div>
+          </a>
+		  
+        </div>
+
+        </div>
+		
+		
+		
+	</div>
+</div>
+	<div class="container_inner">
+<div class="grid grid--effect-rigel col-md-3">
+					<a href="#" class="grid__item grid__item--c1">
+						<div class="stack">
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__figure">
+								<img class="stack__img" src="img/1.png" alt="Image" />
+							</div>
+						</div>
+						<div class="grid__item-caption">
+							<h3 class="grid__item-title">anaerobic</h3>
+							<div class="column column--left">
+								<span class="column__text">Period</span>
+								<span class="column__text">Subjects</span>
+								<span class="column__text">Result</span>
+							</div>
+							<div class="column column--right">
+								<span class="column__text">2045</span>
+								<span class="column__text">133456</span>
+								<span class="column__text">Positive</span>
+							</div>
+						</div>
+					</a>
+					<a href="#" class="grid__item grid__item--c2">
+						<div class="stack">
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__figure">
+								<img class="stack__img" src="img/2.png" alt="Image" />
+							</div>
+						</div>
+						<div class="grid__item-caption">
+							<h3 class="grid__item-title">exothermic</h3>
+							<div class="column column--left">
+								<span class="column__text">Period</span>
+								<span class="column__text">Subjects</span>
+								<span class="column__text">Result</span>
+							</div>
+							<div class="column column--right">
+								<span class="column__text">2045</span>
+								<span class="column__text">133456</span>
+								<span class="column__text">Positive</span>
+							</div>
+						</div>
+					</a>
+					<a href="#" class="grid__item grid__item--c3">
+						<div class="stack">
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__deco"></div>
+							<div class="stack__figure">
+								<img class="stack__img" src="img/3.png" alt="Image" />
+							</div>
+						</div>
+						<div class="grid__item-caption">
+							<h3 class="grid__item-title">diatomic</h3>
+							<div class="column column--left">
+								<span class="column__text">Period</span>
+								<span class="column__text">Subjects</span>
+								<span class="column__text">Result</span>
+							</div>
+							<div class="column column--right">
+								<span class="column__text">2045</span>
+								<span class="column__text">133456</span>
+								<span class="column__text">Positive</span>
+							</div>
+						</div>
+					</a>
+				</div>
+	
+	
+	
+	</div>
+
+	  <div class="row row-cards-pf"><br /><br /></div>
+	 <footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Email " />
+                                <button class="btn  bg-gray" type="button"> Lorem ipsum <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © Perfection Stationery 2017. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                	<li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
+
+    <div class="scroll-to-top">
+	<img src="images/scroll-to-top.png"></img>
+		<!-- <p>Scroll to top</p> *Use this as a text option, instead of the image icon.*-->
+		</div>
+
+<script>
+/*<![CDATA[*/
+  $(document).ready(function() { 
+    // matchHeight the contents of each .card-pf and then the .card-pf itself
+    $(".row-cards-pf > [class*='col'] > .card-pf .card-pf-title").matchHeight();
+    $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-body").matchHeight();
+    $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-footer").matchHeight();
+    $(".row-cards-pf > [class*='col'] > .card-pf").matchHeight();
+
+    // Initialize the vertical navigation
+    $().setupVerticalNavigation(true);
+	
+	 $('.filter span').click(function () {
+        var partnerResources = $(this).parent().attr('data-filter');
+        $('.filter span').removeClass('active');
+        $(this).parent().addClass('active');
+        
+       // console.log('pr', partnerResources)
+
+        if (partnerResources == 'all') {
+            $('#portfolio').children('article:not(.' + partnerResources + ')').css("display","inline-block");
+            $('#portfolio').children('article.' + partnerResources).css("display","inline-block");
+        } else {
+            $('#portfolio').children('article:not(.' + partnerResources + ')').css("display","none");
+            $('#portfolio').children('article.' + partnerResources).css("display","inline-block");
+        }
+        return false;
+    });
+	
+	$(function(){
+      // if text box value is not null, then darken reset icon
+      $(".slinput input").keyup(function(){
+        var val = $(this).val();   
+        if(val.length > 0) {
+           $(this).parent().find(".right-icon").css('color','#555');
+        } else {
+          $(this).parent().find(".right-icon").css('color','#ccc');
+        }
+	
+	    if(val.length == 0){
+			$('#portfolio').children('article').css("display","inline-block");
+		}
+		
+		if (val == 'all' || val.length < 0) {
+            $('#portfolio').children('article:not(.' + val + ')').css("display","inline-block");
+            $('#portfolio').children('article.' + val).css("display","inline-block");
+        } else {
+            $('#portfolio').children('article:not(.' + val + ')').css("display","none");
+            $('#portfolio').children('article.' + val).css("display","inline-block");
+        }
+
+		
+		
+      });
+      
+      // if user click on reset icon, clear text field
+      $(".slinput .right-icon").click(function(){
+        $(this).parent().find("input").val('');
+        $(this).css('color','#ccc');
+      });
+	  
+	  // if user click on reset icon, clear text field
+      $(".slinput .left-icon").click(function(){
+	        var val = $(".slinput input").val();
+			 if (val == 'all') {
+            $('#portfolio').children('article:not(.' + val + ')').css("display","inline-block");
+            $('#portfolio').children('article.' + val).css("display","inline-block");
+        } else {
+            $('#portfolio').children('article:not(.' + val + ')').css("display","none");
+            $('#portfolio').children('article.' + val).css("display","inline-block");
+        }
+      });
+	  
+});
+	
+	
+  });
+  
+  $(function(){
+    //$("div").slice(0, 10).show(); // select the first ten
+    $("#load").click(function(e){ // click event for load more
+        e.preventDefault();
+        $("article:hidden").slice(0, 10).css("display","inline-block"); // select next 10 hidden divs and show them
+        if($("article:hidden").length == 0){ // check if any hidden divs still exist
+            alert("No more articles"); // alert if there are none left
+        }
+    });
+});
+  /*]]>*/  
+</script>
+
+		<script src="js/classie.js"></script>
+		<script src="js/dynamics.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/main2.js"></script>
+		
+		<script>
+			(function() {
+				document.documentElement.className = 'js';
+				var slideshow = new CircleSlideshow(document.getElementById('slideshow'));
+			})();
+		</script>
+		
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( '.checkout' ) ).forEach( function( el ) {
+					var openCtrl = el.querySelector( '.checkout__button' ),
+						closeCtrls = el.querySelectorAll( '.checkout__cancel' ),
+					    doneCtrl = el.querySelector('.checkout__done');
+					
+					doneCtrl.addEventListener( 'click', function(ev) {
+						alert("click done!");
+						
+						
+						Cookies.set('product',JSON.stringify(window.products));
+						Cookies.set('productid',JSON.stringify(window.productids));
+						Cookies.set('price',JSON.stringify(window.price));
+												
+						ev.preventDefault();
+						window.location.href = "checkout.html";
+					} );
+					
+					openCtrl.addEventListener( 'click', function(ev) {
+						alert("click check out!");
+						ev.preventDefault();
+						classie.add( el, 'checkout--active' );
+					} );
+
+					[].slice.call( closeCtrls ).forEach( function( ctrl ) {
+						ctrl.addEventListener( 'click', function() {
+							classie.remove( el, 'checkout--active' );
+						} );
+					} );
+				} );
+			})();
+		</script>
+		
+		<script>            
+			jQuery(document).ready(function() {
+			
+			
+			
+			$('#easyPaginate').easyPaginate({
+			paginateElement: 'a',
+			elementsPerPage: 2,
+			effect: 'climb'
+		});
+			
+			
+			
+			
+				var offset = 200;
+				var duration = 500;
+				jQuery(window).scroll(function() {
+					if (jQuery(this).scrollTop() > offset) {
+						jQuery('.scroll-to-top').fadeIn(duration);
+					} else {
+						jQuery('.scroll-to-top').fadeOut(duration);
+					}
+				});
+				
+				jQuery('.scroll-to-top').click(function(event) {
+					event.preventDefault();
+					jQuery('html, body').animate({scrollTop: 0}, duration);
+					return false;
+				})
+			});
+	</script>
+	<script>
+		(function() {
+			[].slice.call(document.querySelectorAll('.grid--effect-rigel > .grid__item')).forEach(function(stackEl) {
+				new RigelFx(stackEl);
+			});
+		})();
+		</script>
+	 <script type="text/javascript">
+            $(function() {
+                $('#navigation a').stop().animate({'marginLeft':'-85px'},1000);
+
+                $('#navigation > li').hover(
+                    function () {
+                        $('a',$(this)).stop().animate({'marginLeft':'-2px'},200);
+                    },
+                    function () {
+                        $('a',$(this)).stop().animate({'marginLeft':'-85px'},200);
+                    }
+                );
+            });
+        </script>
+        <script type="text/javascript">
+    $(document).ready(function () {
+    	
+    	window.products = [];
+    	window.price = [];
+    	window.productids = [];
+    	
+    	 $('#blogmeeha').click(function(){
+         	alert("load blog");
+			window.location.href = "blog.html";
+ 	  });
+    	
+    	
+    	    	
+        $('#testadd').click(function(){
+        	alert("add meeha1 cookies");
+        	
+        	window.products.push('Doctor Costume');
+        	window.productids.push('1');
+        	window.price.push('100');
+        	
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=100;}
+        	else {window.cost = window.cost + 100;}
+        	alert(window.cost);
+        	
+        	$('#checkoutmeeha > tbody:last-child').append('<tr id="meeha01"><td>Doctor Costume <span>X 1</span></td><td>$100</td></tr>');
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+        	//								    <tr><th colspan="2">Total <span class="checkout__total">$0.0</span></th></tr>
+
+        });
+        
+        $('#testremove').click(function(){
+        	alert("remove meeha");
+        	
+        	var index = window.products.indexOf('Doctor Costume');
+        	if(index > -1){
+        		window.products.splice(index,1);
+        		window.productids.splice(index,1);
+        		window.price.splice(index,1);
+        	}
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=0;}
+
+        	$meeha01 = $('#meeha01');
+        	if (!jQuery.contains(document, $meeha01[0])) {
+        	    alert('not found');
+        	}else{
+        		if(typeof window.cost != 'undefined') {window.cost=window.cost-100;}
+        	}
+        	$('#meeha01').remove();
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+	  });
+        
+        $('#testadd1').click(function(){
+        	alert("add meeha");
+        	
+        	window.products.push('Sailor Costume');
+        	window.productids.push('2');
+        	window.price.push('100');
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=100;}
+        	else {window.cost = window.cost + 100;}
+        	alert(window.cost);
+
+        	
+        	$('#checkoutmeeha > tbody:last-child').append('<tr id="meeha02"><td>Sailor Costume <span>X 1</span></td><td>$100</td></tr>');
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+
+        });
+        
+        $('#testremove1').click(function(){
+        	alert("remove meeha");
+        	if(typeof window.cost == 'undefined') {window.cost=0;}
+        	
+        	var index = window.products.indexOf('Sailor Costume');
+        	if(index > -1){
+        		window.products.splice(index,1);
+        		window.productids.splice(index,1);
+        		window.price.splice(index,1);
+        	}
+
+        	
+        	$meeha02 = $('#meeha02');
+        	if (!jQuery.contains(document, $meeha02[0])) {
+        	    alert('not found');
+        	}else{
+        		if(typeof window.cost != 'undefined') {window.cost=window.cost-100;}
+        	}
+        	
+        	$('#meeha02').remove();
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+	  });
+        
+        $('#testadd2').click(function(){
+        	alert("add meeha");
+        	
+        	window.products.push('Pirate Costume');
+        	window.productids.push('3');
+        	window.price.push('100');
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=100;}
+        	else {window.cost = window.cost + 100;}
+        	alert(window.cost);
+        	
+        	$('#checkoutmeeha > tbody:last-child').append('<tr id="meeha03"><td>Pirate Costume <span>X 1</span></td><td>$100</td></tr>');
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');        
+        });
+        
+        $('#testremove2').click(function(){
+        	alert("remove meeha");
+        	
+        	var index = window.products.indexOf('Pirate Costume');
+        	if(index > -1){
+        		window.products.splice(index,1);
+        		window.productids.splice(index,1);
+        		window.price.splice(index,1);
+        	}
+        	
+        	if(typeof window.cost == 'undefined') {window.cost=0;}
+        	
+        	$meeha03 = $('#meeha03');
+        	if (!jQuery.contains(document, $meeha03[0])) {
+        	    alert('not found');
+        	}else{
+        		if(typeof window.cost != 'undefined') {window.cost=window.cost-100;}
+        	}
+        	$('#meeha03').remove();
+        	$('#checkoutmeeha tfoot').empty();
+        	$('#checkoutmeeha tfoot').append('<tr><th colspan="2">Total <span class="checkout__total">$' + window.cost + '</span></th></tr>');
+	  });
+    	
+        $('#btn_submit').on("click",function(e){
+            e.preventDefault();
+            var firstName = $("#customer_first_name").val();
+            var lastName = $("#customer_last_name").val();
+            if (!$(".checkbox :checkbox").is(":checked")){
+                alert("You must at least select one product");
+            }
+            else if($.trim(firstName)===""){
+                alert("You must fill the first name");
+            }
+            else if($.trim(lastName)===""){
+                alert("You must fill the last name");
+            }
+            else{
+                var productIds = [];
+                $(".checkbox :checkbox:checked").each(function(){
+                   productIds.push(parseInt($(this).attr("id")));
+                });
+                $.ajax({
+                   type:"POST",
+                   url:"/createorder",
+                   data:{firstName:firstName,lastName:lastName, productIds:productIds},
+                   success:function (data) {
+                       if (confirm("Order with Id " +data + " Saved")){
+                           window.location.reload();
+                       }
+                   }
+                });
+            }
+        });
+
+        //Complete order button handler
+
+        $('.delete-order').on("click", function(e){
+            e.preventDefault();
+
+            if(confirm("Are you sure the order is complete?")){
+                var Id = parseInt($(this).closest("td").attr("id"));
+
+                $.ajax({
+                    type:"POST",
+                    url:"/removeorder",
+                    data:{Id:Id},
+                    success:function (data) {
+                        $(".delete-order").closest("td#"+data).parent("tr").fadeOut("slow",function(){
+                            $(".delete-order").closest("td#"+data).parent("tr").remove();
+                        });
+                    }
+                });
+            }
+
+        });
+
+    });
+</script>
+        
+        
+  </body>
+</html>
